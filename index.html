@@ -707,7 +707,16 @@
     </div>
   </div>
 </footer>
-  <!-- ====================== SCRIPTLER BAŞLANGIÇ ===================== -->
+<!-- ====================== SCRIPTLER BAŞLANGIÇ ===================== -->
+<script>
+  function scheduleIdle(callback) {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(callback);
+    } else {
+      setTimeout(callback, 1);
+    }
+  }
+</script>
 
 <!-- Yorumlar Carousel: Dinamik Grid ve Ok ile Gezinme -->
 <script>
@@ -750,11 +759,7 @@
       }
     };
 
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(initYorumlar);
-    } else {
-      setTimeout(initYorumlar, 1);
-    }
+    scheduleIdle(initYorumlar);
   });
   </script>
 
@@ -785,11 +790,7 @@
       });
     };
 
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(initFaq);
-    } else {
-      setTimeout(initFaq, 1);
-    }
+    scheduleIdle(initFaq);
   });
 </script>
 
@@ -811,11 +812,7 @@
       reveals.forEach(el => observer.observe(el));
     };
 
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(initReveal);
-    } else {
-      setTimeout(initReveal, 1);
-    }
+    scheduleIdle(initReveal);
   });
 </script>
 
@@ -862,11 +859,7 @@
       });
     };
 
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(initReadMore);
-    } else {
-      setTimeout(initReadMore, 1);
-    }
+    scheduleIdle(initReadMore);
   });
 </script>
 </body>
