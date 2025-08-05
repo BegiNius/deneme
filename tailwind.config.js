@@ -14,8 +14,8 @@ module.exports = {
         'brand-bg': '#fff8f3'
       },
       fontFamily: {
-        sans: ['Inter','Roboto','Arial','sans-serif'],
-        headline: ['Pacifico','cursive']
+        sans: ['Arial', 'sans-serif'],
+        headline: ['Arial', 'sans-serif']
       }
     }
   },
