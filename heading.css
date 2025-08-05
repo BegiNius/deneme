@@ -1,1 +1,6 @@
 /* Non-critical heading styles loaded asynchronously */
+h1,
+h2{width:100%}
+h1{min-height:3rem}
+@media(min-width:768px){h1{min-height:3.75rem}}
+h2{min-height:2.5rem}
