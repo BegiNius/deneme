@@ -1,3 +1,9 @@
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(console.error);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Load high-resolution hero background
   const heroBg = document.getElementById('hero-bg');
