@@ -238,6 +238,17 @@
     <section id="rehber" class="relative py-20 overflow-hidden">
     <div class="absolute inset-0 bg-[url('src/img/footer.webp')] bg-cover bg-center opacity-60"></div>
     <div class="guide-container relative z-10">
+      <div class="guide-card">
+        <svg class="illustration" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="24" r="12" fill="#ffe0b2" stroke="#555" stroke-width="2"/>
+          <path d="M12 32a20 20 0 0 1 40 0v10a6 6 0 0 1-6 6h-4" fill="none" stroke="#555" stroke-width="2"/>
+          <path d="M22 42h20v10H22z" fill="#fff" stroke="#555" stroke-width="2"/>
+          <path d="M16 32v-4M48 32v-4" stroke="#555" stroke-width="2"/>
+        </svg>
+        <h2>Freelance Çağrı Merkezi Rehberi</h2>
+        <p>Evden çağrı merkezi modeli, uzaktan çalışmanın sunduğu avantajlarla işletmeler ve çalışanlar için yeni fırsatlar yaratır.</p>
+        <div id="rehber-icerik" class="mt-10 text-left"></div>
+      </div>
       <aside class="toc-card">
         <h3>İçindekiler</h3>
         <ul class="toc-list">
@@ -256,17 +267,6 @@
           <li><a href="#ozet"><span class="toc-icon" style="background:#2ec4b6;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16v16H4z"/><path d="M8 8h8v8H8z"/></svg></span>Özet</a></li>
         </ul>
       </aside>
-      <div class="guide-card">
-        <svg class="illustration" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="24" r="12" fill="#ffe0b2" stroke="#555" stroke-width="2"/>
-          <path d="M12 32a20 20 0 0 1 40 0v10a6 6 0 0 1-6 6h-4" fill="none" stroke="#555" stroke-width="2"/>
-          <path d="M22 42h20v10H22z" fill="#fff" stroke="#555" stroke-width="2"/>
-          <path d="M16 32v-4M48 32v-4" stroke="#555" stroke-width="2"/>
-        </svg>
-        <h1>Freelance Çağrı Merkezi Rehberi</h1>
-        <p>Evden çağrı merkezi modeli, uzaktan çalışmanın sunduğu avantajlarla işletmeler ve çalışanlar için yeni fırsatlar yaratır.</p>
-        <div id="rehber-icerik" class="mt-10 text-left"></div>
-      </div>
     </div>
   </section>
 
@@ -286,7 +286,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
           </svg>
           <div>
-            <h4 class="font-headline text-xl mb-2">Başvuru</h4>
+            <h3 class="font-headline text-xl mb-2">Başvuru</h3>
             <p>Sana uygun pozisyonu arayarak ilk adımı at.</p>
           </div>
         </div>
@@ -297,7 +297,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21l6-3-6-3-6 3 6 3z" />
           </svg>
           <div>
-            <h4 class="font-headline text-xl mb-2">Eğitim</h4>
+            <h3 class="font-headline text-xl mb-2">Eğitim</h3>
             <p>Uzaktan eğitimle gerekli becerileri kazan.</p>
           </div>
         </div>
@@ -307,7 +307,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6" />
           </svg>
           <div>
-            <h4 class="font-headline text-xl mb-2">İlk Proje</h4>
+            <h3 class="font-headline text-xl mb-2">İlk Proje</h3>
             <p>Müşteri projelerinde yer al ve deneyim kazan.</p>
           </div>
         </div>
@@ -532,8 +532,8 @@
       </div>
     </div>
     </div>
-      <button id="nextTestimonial" class="slider-arrow right">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      <button id="nextTestimonial" class="slider-arrow right" type="button" aria-label="Sonraki yorum">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       </button>
     </div>
   </section>
@@ -545,7 +545,7 @@
     </div>
     <div class="max-w-6xl mx-auto space-y-4 px-6">
       <div class="faq-item bg-white rounded-2xl shadow transition-all hover:shadow-lg hover:scale-105">
-        <button class="faq-trigger w-full flex justify-between items-center p-6 text-left">
+        <button id="faq-trigger-1" class="faq-trigger w-full flex justify-between items-center p-6 text-left" aria-expanded="false" aria-controls="faq1">
           <span class="flex items-center gap-4">
             <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
@@ -558,13 +558,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
           </svg>
         </button>
-        <div class="faq-content hidden px-6 pb-6">
+        <div id="faq1" class="faq-content hidden px-6 pb-6" role="region" aria-labelledby="faq-trigger-1">
           <p>Bilgisayar, kulaklık ve güvenilir bir internet bağlantısı gereklidir.</p>
         </div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl shadow transition-all hover:shadow-lg hover:scale-105">
-        <button class="faq-trigger w-full flex justify-between items-center p-6 text-left">
+        <button id="faq-trigger-2" class="faq-trigger w-full flex justify-between items-center p-6 text-left" aria-expanded="false" aria-controls="faq2">
           <span class="flex items-center gap-4">
             <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
@@ -577,13 +577,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
           </svg>
         </button>
-        <div class="faq-content hidden px-6 pb-6">
+        <div id="faq2" class="faq-content hidden px-6 pb-6" role="region" aria-labelledby="faq-trigger-2">
           <p>Ödemeler aylık olarak banka hesabınıza yatırılır.</p>
         </div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl shadow transition-all hover:shadow-lg hover:scale-105">
-        <button class="faq-trigger w-full flex justify-between items-center p-6 text-left">
+        <button id="faq-trigger-3" class="faq-trigger w-full flex justify-between items-center p-6 text-left" aria-expanded="false" aria-controls="faq3">
           <span class="flex items-center gap-4">
             <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
@@ -596,13 +596,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
           </svg>
         </button>
-        <div class="faq-content hidden px-6 pb-6">
+        <div id="faq3" class="faq-content hidden px-6 pb-6" role="region" aria-labelledby="faq-trigger-3">
           <p>Başvuru sonrası uzaktan eğitim verilir ve online testler uygulanır.</p>
         </div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl shadow transition-all hover:shadow-lg hover:scale-105">
-        <button class="faq-trigger w-full flex justify-between items-center p-6 text-left">
+        <button id="faq-trigger-4" class="faq-trigger w-full flex justify-between items-center p-6 text-left" aria-expanded="false" aria-controls="faq4">
           <span class="flex items-center gap-4">
             <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
@@ -615,13 +615,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
           </svg>
         </button>
-        <div class="faq-content hidden px-6 pb-6">
+        <div id="faq4" class="faq-content hidden px-6 pb-6" role="region" aria-labelledby="faq-trigger-4">
           <p>Evet, kendi programınıza uygun saatlerde çalışabilirsiniz.</p>
         </div>
       </div>
 
       <div class="faq-item bg-white rounded-2xl shadow transition-all hover:shadow-lg hover:scale-105">
-        <button class="faq-trigger w-full flex justify-between items-center p-6 text-left">
+        <button id="faq-trigger-5" class="faq-trigger w-full flex justify-between items-center p-6 text-left" aria-expanded="false" aria-controls="faq5">
           <span class="flex items-center gap-4">
             <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
@@ -634,12 +634,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
           </svg>
         </button>
-        <div class="faq-content hidden px-6 pb-6">
+        <div id="faq5" class="faq-content hidden px-6 pb-6" role="region" aria-labelledby="faq-trigger-5">
           <p>18 yaşını doldurmuş olmak ve temel bilgisayar bilgisine sahip olmak gerekir.</p>
         </div>
       </div>
       <div class="faq-item bg-white rounded-2xl shadow transition-all hover:shadow-lg hover:scale-105">
-        <button class="faq-trigger w-full flex justify-between items-center p-6 text-left">
+        <button id="faq-trigger-6" class="faq-trigger w-full flex justify-between items-center p-6 text-left" aria-expanded="false" aria-controls="faq6">
           <span class="flex items-center gap-4">
             <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"/>
@@ -652,7 +652,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
           </svg>
         </button>
-        <div class="faq-content hidden px-6 pb-6">
+        <div id="faq6" class="faq-content hidden px-6 pb-6" role="region" aria-labelledby="faq-trigger-6">
           <p>Her projeye özel destek ve sürekli eğitim sağlıyoruz.</p>
         </div>
       </div>
@@ -698,7 +698,10 @@
           openItem.classList.remove('active', 'bg-orange-50');
           openItem.querySelector('.faq-content').classList.add('hidden');
           openItem.querySelector('.chevron').classList.remove('rotate-180');
+          openItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
         }
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
         item.classList.toggle('active');
         item.classList.toggle('bg-orange-50');
         item.querySelector('.faq-content').classList.toggle('hidden');
