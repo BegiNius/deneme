@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     heroBg.style.filter = 'none';
   };
 
-  // Load remaining sections after 500ms
-  setTimeout(() => {
+  const container = document.getElementById('lazy-sections');
+
+  const loadSections = () => {
     fetch('sections.html')
       .then(res => res.text())
       .then(html => {
-        const container = document.getElementById('lazy-sections');
         container.innerHTML = html;
         container.style.minHeight = '';
         container.classList.add('fade-in');
@@ -50,5 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
         guideScript.defer = true;
         document.body.appendChild(guideScript);
       });
-  }, 500);
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        loadSections();
+        observer.disconnect();
+      }
+    });
+  });
+
+  observer.observe(container);
 });
