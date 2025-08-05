@@ -17,7 +17,8 @@
   <meta name="twitter:description" content="Evden çalışma için ipuçları ve kaynaklar." />
   <meta name="twitter:image" content="https://example.com/head2.webp" />
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="heading.css">
+    <link rel="preload" href="heading.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="heading.css"></noscript>
 </head>
 <body class="overflow-x-hidden">
   <div class="guide-container">
