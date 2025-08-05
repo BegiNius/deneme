@@ -24,6 +24,26 @@ document.addEventListener('DOMContentLoaded', () => {
         container.style.minHeight = '';
         container.classList.add('fade-in');
 
+        const slider = container.querySelector('.testimonial-slider');
+        if (slider) {
+          const cards = slider.querySelectorAll('.testimonial-card');
+          let index = 0;
+          const show = (i) => {
+            slider.style.transform = `translateX(-${i * 100}%)`;
+          };
+          container.querySelector('#nextTestimonial')?.addEventListener('click', () => {
+            index = (index + 1) % cards.length;
+            show(index);
+          });
+          const prev = container.querySelector('#prevTestimonial');
+          if (prev) {
+            prev.addEventListener('click', () => {
+              index = (index - 1 + cards.length) % cards.length;
+              show(index);
+            });
+          }
+        }
+
         // FAQ accordion
         container.querySelectorAll('.faq-trigger').forEach(btn => {
           btn.addEventListener('click', () => {
