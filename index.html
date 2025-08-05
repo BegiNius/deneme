@@ -75,7 +75,18 @@
   <!-- Fonts -->
       <link rel="preload" as="style" href="main.css" onload="this.onload=null;this.rel='stylesheet'">
       <noscript><link rel="stylesheet" href="main.css"></noscript>
-      <link rel="stylesheet" href="heading.css">
+      <!-- Critical heading styles inlined to improve LCP -->
+      <style>
+        /* Explicit h1 size within sectioning elements to avoid browser defaults */
+        article h1,
+        aside h1,
+        nav h1,
+        section h1 {
+          font-size: 2em;
+        }
+      </style>
+      <link rel="preload" as="style" href="heading.css" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="heading.css"></noscript>
 </head>
 <body class="bg-brand-bg text-gray-800 font-sans">
   <!-- Navbar -->
