@@ -1,7 +1,1 @@
-/* Explicit h1 size within sectioning elements to avoid browser defaults */
-article h1,
-aside h1,
-nav h1,
-section h1 {
-  font-size: 2em;
-}
+/* Non-critical heading styles loaded asynchronously */
