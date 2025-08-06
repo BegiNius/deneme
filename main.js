@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('sections.html')
       .then(res => res.text())
       .then(html => {
-        container.innerHTML = html;
+        const fragment = document.createRange().createContextualFragment(html);
+        container.style.minHeight = '';
+        container.replaceChildren(fragment);
         requestAnimationFrame(() => {
-          container.style.minHeight = '';
           container.classList.add('fade-in');
 
           const slider = container.querySelector('.testimonial-slider');
