@@ -85,11 +85,11 @@
 
 /* Hero diagonal split */
 .left-hero {
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  clip-path: polygon(0 0, 50% 50%, 0 100%);
 }
 
 .right-hero {
-  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  clip-path: polygon(50% 50%, 100% 0, 100% 100%);
 }
 
 @media (max-width: 767px) {
