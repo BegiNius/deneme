@@ -49,6 +49,8 @@
 
     .testimonial-slider{display:flex;transition:transform .5s;}
     .testimonial-card{background:#fff;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:24px;text-align:center;transition:transform .3s;min-height:260px;overflow:hidden;display:flex;flex-direction:column;flex:0 0 100%;}
+    @media(min-width:768px){.testimonial-card{flex:0 0 50%;}}
+    @media(min-width:1024px){.testimonial-card{flex:0 0 33.333333%;}}
     .testimonial-card:hover{transform:scale(1.05);}
     .testimonial-icon{width:24px;height:24px;color:#8c3600;margin:0 auto 8px;}
     .testimonial-avatar{display:none;}
