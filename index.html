@@ -16,58 +16,89 @@
   <meta name="twitter:title" content="Freelance Çağrı Merkezi" />
   <meta name="twitter:description" content="Evden çalış, esnek saatlerle kurumsal projelerde yer al." />
   <meta name="twitter:image" content="https://example.com/head1.webp" />
-  <script type="application/ld+json">
+   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "Evden çalışmak için hangi ekipman gerekli?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Bilgisayar, kulaklık ve güvenilir bir internet bağlantısı gereklidir."
+        "@type": "WebSite",
+        "@id": "https://example.com/#website",
+        "url": "https://example.com/",
+        "name": "Freelance Çağrı Merkezi",
+        "description": "Evden çalış, esnek saatlerle kurumsal projelerde yer al.",
+        "inLanguage": "tr",
+        "publisher": { "@id": "https://example.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://example.com/#organization",
+        "name": "FreelanceCall",
+        "url": "https://example.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://example.com/head1.webp"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+90-555-123-4567",
+          "contactType": "customer service",
+          "areaServed": "TR",
+          "availableLanguage": "tr"
         }
       },
       {
-        "@type": "Question",
-        "name": "Ödemeler nasıl yapılıyor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ödemeler aylık olarak banka hesabınıza yatırılır."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Eğitim süreci nasıl işliyor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Başvuru sonrası uzaktan eğitim verilir ve online testler uygulanır."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Çalışma saatleri esnek mi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Evet, kendi programınıza uygun saatlerde çalışabilirsiniz."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Başvuru için gerekli şartlar nelerdir?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "18 yaşını doldurmuş olmak ve temel bilgisayar bilgisine sahip olmak gerekir."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Destek ve eğitim veriyor musunuz?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Her projeye özel destek ve sürekli eğitim sağlıyoruz."
-        }
+        "@type": "FAQPage",
+        "@id": "https://example.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Evden çalışmak için hangi ekipman gerekli?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bilgisayar, kulaklık ve güvenilir bir internet bağlantısı gereklidir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ödemeler nasıl yapılıyor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ödemeler aylık olarak banka hesabınıza yatırılır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Eğitim süreci nasıl işliyor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Başvuru sonrası uzaktan eğitim verilir ve online testler uygulanır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Çalışma saatleri esnek mi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evet, kendi programınıza uygun saatlerde çalışabilirsiniz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Başvuru için gerekli şartlar nelerdir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "18 yaşını doldurmuş olmak ve temel bilgisayar bilgisine sahip olmak gerekir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Destek ve eğitim veriyor musunuz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Her projeye özel destek ve sürekli eğitim sağlıyoruz."
+            }
+          }
+        ]
       }
     ]
   }
