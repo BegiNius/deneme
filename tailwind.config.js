@@ -2,7 +2,6 @@ module.exports = {
   content: [
     './index.html',
     './sections.html',
-    './guide.html',
     './main.js',
     './guide.js',
     './src/**/*.{html,js}'
