@@ -74,3 +74,11 @@
 .hover-glow:hover {
   filter: brightness(1.05);
 }
+
+/* Tilted cards for Neden Biz section */
+.neden-card {
+  transform: rotate(-2deg) skewY(-1deg);
+}
+.neden-card:nth-child(even) {
+  transform: rotate(2deg) skewY(1deg);
+}
