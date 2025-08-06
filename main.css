@@ -1083,9 +1083,9 @@ video {
 @font-face{
   font-family:'Arial';
 
-  src:local('Arial'),local('ArialMT'),local('sans-serif');
+  src:url('src/fonts/arial.woff2') format('woff2'),local('Arial'),local('ArialMT'),local('sans-serif');
 
-  font-display:swap
+  font-display:swap;
 }
 
 .glass {
