@@ -1,4 +1,4 @@
-/* Diagonal layout and asymmetric cards */
+/* Diagonal layout */
 .diagonal-section {
   transform: skewY(-4deg);
   transform-origin: top left;
@@ -6,29 +6,6 @@
 .diagonal-section > * {
   transform: skewY(4deg);
 }
-.asymmetric > * {
-  transform: rotate(-3deg);
-}
-.asymmetric > *:nth-child(even) {
-  transform: rotate(3deg);
-}
-@media (min-width:768px) {
-  .asymmetric > * {
-    margin-top: 1rem;
-  }
-  .asymmetric > *:nth-child(even) {
-    margin-top: 0;
-  }
-}
-
-/* Skewed cards used in specific sections */
-.skewed > * {
-  transform: rotate(-3deg) skewY(-2deg);
-}
-.skewed > *:nth-child(even) {
-  transform: rotate(3deg) skewY(2deg);
-}
-
 /* Wave dividers separating sections */
 .wave {
   width: 100%;
@@ -75,10 +52,3 @@
   filter: brightness(1.05);
 }
 
-/* Tilted cards for Neden Biz section */
-.neden-card {
-  transform: rotate(-2deg) skewY(-1deg);
-}
-.neden-card:nth-child(even) {
-  transform: rotate(2deg) skewY(1deg);
-}
