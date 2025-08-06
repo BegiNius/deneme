@@ -21,35 +21,34 @@ document.addEventListener('DOMContentLoaded', () => {
           if (slider) {
             const cards = slider.querySelectorAll('.testimonial-card');
             let index = 0;
-            const getPerView = () => window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-            const update = () => {
+            const getPerView = () =>
+              window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+            const render = () => {
               const perView = getPerView();
               const maxIndex = cards.length - perView;
               if (index > maxIndex) index = 0;
+              if (index < 0) index = maxIndex;
               slider.style.transform = `translateX(-${(100 / perView) * index}%)`;
             };
-            const scheduleUpdate = () => requestAnimationFrame(update);
-            container.querySelector('#nextTestimonial')?.addEventListener('click', () => {
-              const perView = getPerView();
-              const maxIndex = cards.length - perView;
-              index = index >= maxIndex ? 0 : index + 1;
-              scheduleUpdate();
+            const rafRender = () => requestAnimationFrame(render);
+            const next = container.querySelector('#nextTestimonial');
+            next?.addEventListener('click', () => {
+              index++;
+              rafRender();
             });
             const prev = container.querySelector('#prevTestimonial');
             if (prev) {
               prev.addEventListener('click', () => {
-                const perView = getPerView();
-                const maxIndex = cards.length - perView;
-                index = index <= 0 ? maxIndex : index - 1;
-                scheduleUpdate();
+                index--;
+                rafRender();
               });
             }
             let resizeRAF;
             window.addEventListener('resize', () => {
               cancelAnimationFrame(resizeRAF);
-              resizeRAF = requestAnimationFrame(update);
+              resizeRAF = requestAnimationFrame(render);
             });
-            update();
+            render();
           }
 
           // FAQ accordion
@@ -63,10 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
               if (openItem && openItem !== item) {
                 const openContent = openItem.querySelector('.faq-content');
                 const openChevron = openItem.querySelector('.chevron');
+                const openTrigger = openItem.querySelector('.faq-trigger');
                 openItem.classList.remove('active', 'bg-orange-50');
                 openContent.classList.add('hidden');
                 openChevron.classList.remove('rotate-180');
-                openItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                openTrigger?.setAttribute('aria-expanded', 'false');
               }
               const expanded = btn.getAttribute('aria-expanded') === 'true';
               btn.setAttribute('aria-expanded', String(!expanded));
