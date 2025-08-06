@@ -1210,7 +1210,7 @@ video {
 }
 
 @media (max-width:768px){
-  .guide-card {
+  .toc-card {
     order:-1;
   }
 }
