@@ -6,7 +6,6 @@ const ASSETS = [
   'main.js',
   'guide.js',
   'sections.html',
-  'src/img/head1.webp'
 ];
 
 self.addEventListener('install', event => {
