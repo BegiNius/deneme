@@ -123,12 +123,13 @@
         gap: 1rem;
       }
       #hero .btn-primary {
-        background: #e65100;
+        background: #bf360c;
         color: #fff;
         padding: 1rem 2rem;
         border-radius: 9999px;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1.125rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
       }
       #hero .btn-secondary {
         padding: 1rem 2rem;
@@ -139,7 +140,10 @@
         color: #e65100;
         background: transparent;
       }
-      #hero .btn-primary:hover { background: #bf360c; }
+      #hero .btn-primary:hover {
+        background: #a52714;
+        transform: scale(1.05);
+      }
       #hero .btn-secondary:hover { background: #e65100; color: #fff; }
       @media (max-width:640px) {
         #hero .actions { flex-direction: column; }
@@ -184,7 +188,7 @@
       <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl drop-shadow">Freelance Çağrı Merkezi</h1>
       <p class="text-lg sm:text-xl">Sıradanlığı Bırak, Kurumsal Dünyaya Evinden Hükmet!</p>
       <div class="actions">
-        <a href="#basvur" class="btn-primary">Hemen Ara</a>
+        <a href="#basvur" class="btn-primary" aria-label="Başvuru bölümüne git">Hemen Ara</a>
         <a href="#detay" class="btn-secondary">Detaylar</a>
       </div>
     </div>
