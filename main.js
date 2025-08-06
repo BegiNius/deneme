@@ -28,20 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (slider) {
           const cards = slider.querySelectorAll('.testimonial-card');
           let index = 0;
-          const show = (i) => {
-            slider.style.transform = `translateX(-${i * 100}%)`;
+          const getPerView = () => window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+          const update = () => {
+            const perView = getPerView();
+            const maxIndex = cards.length - perView;
+            if (index > maxIndex) index = 0;
+            slider.style.transform = `translateX(-${(100 / perView) * index}%)`;
           };
           container.querySelector('#nextTestimonial')?.addEventListener('click', () => {
-            index = (index + 1) % cards.length;
-            show(index);
+            const perView = getPerView();
+            const maxIndex = cards.length - perView;
+            index = index >= maxIndex ? 0 : index + 1;
+            update();
           });
           const prev = container.querySelector('#prevTestimonial');
           if (prev) {
             prev.addEventListener('click', () => {
-              index = (index - 1 + cards.length) % cards.length;
-              show(index);
+              const perView = getPerView();
+              const maxIndex = cards.length - perView;
+              index = index <= 0 ? maxIndex : index - 1;
+              update();
             });
           }
+          window.addEventListener('resize', update);
+          update();
         }
 
         // FAQ accordion
