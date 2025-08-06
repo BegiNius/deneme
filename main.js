@@ -12,64 +12,76 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(res => res.text())
       .then(html => {
         container.innerHTML = html;
-        container.style.minHeight = '';
-        container.classList.add('fade-in');
+        requestAnimationFrame(() => {
+          container.style.minHeight = '';
+          container.classList.add('fade-in');
 
-        const slider = container.querySelector('.testimonial-slider');
-        if (slider) {
-          const cards = slider.querySelectorAll('.testimonial-card');
-          let index = 0;
-          const getPerView = () => window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-          const update = () => {
-            const perView = getPerView();
-            const maxIndex = cards.length - perView;
-            if (index > maxIndex) index = 0;
-            slider.style.transform = `translateX(-${(100 / perView) * index}%)`;
-          };
-          container.querySelector('#nextTestimonial')?.addEventListener('click', () => {
-            const perView = getPerView();
-            const maxIndex = cards.length - perView;
-            index = index >= maxIndex ? 0 : index + 1;
-            update();
-          });
-          const prev = container.querySelector('#prevTestimonial');
-          if (prev) {
-            prev.addEventListener('click', () => {
+          const slider = container.querySelector('.testimonial-slider');
+          if (slider) {
+            const cards = slider.querySelectorAll('.testimonial-card');
+            let index = 0;
+            const getPerView = () => window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+            const update = () => {
               const perView = getPerView();
               const maxIndex = cards.length - perView;
-              index = index <= 0 ? maxIndex : index - 1;
-              update();
+              if (index > maxIndex) index = 0;
+              slider.style.transform = `translateX(-${(100 / perView) * index}%)`;
+            };
+            const scheduleUpdate = () => requestAnimationFrame(update);
+            container.querySelector('#nextTestimonial')?.addEventListener('click', () => {
+              const perView = getPerView();
+              const maxIndex = cards.length - perView;
+              index = index >= maxIndex ? 0 : index + 1;
+              scheduleUpdate();
             });
-          }
-          window.addEventListener('resize', update);
-          update();
-        }
-
-        // FAQ accordion
-        container.querySelectorAll('.faq-trigger').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const item = btn.parentElement;
-            const openItem = container.querySelector('.faq-item.active');
-            if (openItem && openItem !== item) {
-              openItem.classList.remove('active', 'bg-orange-50');
-              openItem.querySelector('.faq-content').classList.add('hidden');
-              openItem.querySelector('.chevron').classList.remove('rotate-180');
-              openItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            const prev = container.querySelector('#prevTestimonial');
+            if (prev) {
+              prev.addEventListener('click', () => {
+                const perView = getPerView();
+                const maxIndex = cards.length - perView;
+                index = index <= 0 ? maxIndex : index - 1;
+                scheduleUpdate();
+              });
             }
-            const expanded = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', String(!expanded));
-            item.classList.toggle('active');
-            item.classList.toggle('bg-orange-50');
-            item.querySelector('.faq-content').classList.toggle('hidden');
-            item.querySelector('.chevron').classList.toggle('rotate-180');
-          });
-        });
+            let resizeRAF;
+            window.addEventListener('resize', () => {
+              cancelAnimationFrame(resizeRAF);
+              resizeRAF = requestAnimationFrame(update);
+            });
+            update();
+          }
 
-        // load guide script
-        const guideScript = document.createElement('script');
-        guideScript.src = 'guide.js';
-        guideScript.defer = true;
-        document.body.appendChild(guideScript);
+          // FAQ accordion
+          container.querySelectorAll('.faq-trigger').forEach(btn => {
+            const item = btn.parentElement;
+            const content = item.querySelector('.faq-content');
+            const chevron = item.querySelector('.chevron');
+
+            btn.addEventListener('click', () => {
+              const openItem = container.querySelector('.faq-item.active');
+              if (openItem && openItem !== item) {
+                const openContent = openItem.querySelector('.faq-content');
+                const openChevron = openItem.querySelector('.chevron');
+                openItem.classList.remove('active', 'bg-orange-50');
+                openContent.classList.add('hidden');
+                openChevron.classList.remove('rotate-180');
+                openItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+              }
+              const expanded = btn.getAttribute('aria-expanded') === 'true';
+              btn.setAttribute('aria-expanded', String(!expanded));
+              item.classList.toggle('active');
+              item.classList.toggle('bg-orange-50');
+              content.classList.toggle('hidden');
+              chevron.classList.toggle('rotate-180');
+            });
+          });
+
+          // load guide script
+          const guideScript = document.createElement('script');
+          guideScript.src = 'guide.js';
+          guideScript.defer = true;
+          document.body.appendChild(guideScript);
+        });
       });
   };
 
