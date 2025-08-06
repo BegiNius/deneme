@@ -5,15 +5,6 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Load high-resolution hero background
-  const heroBg = document.getElementById('hero-bg');
-  const img = new Image();
-  img.src = 'src/img/head1.webp';
-  img.onload = () => {
-    heroBg.style.backgroundImage = "url('src/img/head1.webp')";
-    heroBg.style.filter = 'none';
-  };
-
   const container = document.getElementById('lazy-sections');
 
   const loadSections = () => {
