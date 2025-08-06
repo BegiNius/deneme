@@ -1,0 +1,22 @@
+/* Diagonal layout and asymmetric cards */
+.diagonal-section {
+  transform: skewY(-4deg);
+  transform-origin: top left;
+}
+.diagonal-section > * {
+  transform: skewY(4deg);
+}
+.asymmetric > * {
+  transform: rotate(-3deg);
+}
+.asymmetric > *:nth-child(even) {
+  transform: rotate(3deg);
+}
+@media (min-width:768px) {
+  .asymmetric > * {
+    margin-top: 1rem;
+  }
+  .asymmetric > *:nth-child(even) {
+    margin-top: 0;
+  }
+}
