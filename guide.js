@@ -19,7 +19,10 @@ function initTOC() {
       const targetId = sectionMap[key];
       const target = document.getElementById(targetId);
       if (target) {
-        target.scrollIntoView({behavior: 'smooth'});
+        const rect = target.getBoundingClientRect();
+        if (rect.top < 0 || rect.bottom > window.innerHeight) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
       }
     });
   });
