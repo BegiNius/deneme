@@ -74,7 +74,10 @@
   </script>
   <style>
     body { margin: 0; }
+    #hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+    #hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: filter 0.5s; }
   </style>
+  <link rel="preload" as="image" href="src/img/head1.webp" />
   <!-- Fonts -->
       <link rel="preload" as="style" href="main.css" onload="this.onload=null;this.rel='stylesheet'">
       <noscript><link rel="stylesheet" href="main.css"></noscript>
@@ -106,9 +109,9 @@
   </nav>
 
   <!-- Hero -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;">
     <div id="hero-bg" class="absolute inset-0" style="background-image:url('data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADQBACdASoSAAwAPpE4l0eloyIhMAgAsBIJQBOmUGMFkAFQAMYUTPdQlfPK3aVn0ADOF+/n/DoLVvQLo+qygHQdc43SylXVdbMji2OUVuDT9f+GIp6XsH7m8HfDa/rIy1eBjUwK27Ixi/p7YMm63EYR3CIc1VFsP6B0aqU1sQmKrww1qN9m6Lupg9667rtRqmPfBhUJ2rU8fuPxjWUhNucYhRmIEw9sbawAAA==');background-size:cover;background-position:center;filter:blur(20px);transition:filter .5s;"></div>
-    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 bg-black/60" style="position:absolute;inset:0;background-color:rgba(0,0,0,0.6);"></div>
     <div class="relative max-w-2xl p-8 text-white">
      <h1 class="font-headline text-5xl md:text-6xl drop-shadow-lg mb-6 w-full h-[3rem] md:h-[3.75rem] leading-[3rem] md:leading-[3.75rem]">
   Freelance Çağrı Merkezi
