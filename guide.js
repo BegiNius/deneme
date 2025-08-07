@@ -21,8 +21,15 @@ function setupObserver() {
 
 function expandGuide() {
   return new Promise(resolve => {
-    if (expanded) return resolve();
-    container.appendChild(template.content.cloneNode(true));
+    if (expanded) {
+      resolve();
+      return;
+    }
+    if (!template || !container) {
+      resolve();
+      return;
+    }
+    container.innerHTML = template.innerHTML;
     const collapseBtn = document.createElement('button');
     collapseBtn.id = 'rehber-collapse';
     collapseBtn.className = 'btn-secondary mt-4';
@@ -30,6 +37,7 @@ function expandGuide() {
     collapseBtn.addEventListener('click', collapseGuide);
     container.appendChild(collapseBtn);
     container.classList.add('fade-in');
+    container.style.display = 'block';
     setupObserver();
     expanded = true;
     resolve();
@@ -50,7 +58,7 @@ function handleTocClick(evt) {
   evt.preventDefault();
   const id = this.getAttribute('href').substring(1);
   expandGuide().then(() => {
-    toggleBtn.style.display = 'none';
+    if (expanded) toggleBtn.style.display = 'none';
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
@@ -59,7 +67,9 @@ function handleTocClick(evt) {
 
 if (container && template && toggleBtn) {
   toggleBtn.addEventListener('click', () => {
-    expandGuide().then(() => { toggleBtn.style.display = 'none'; });
+    expandGuide().then(() => {
+      if (expanded) toggleBtn.style.display = 'none';
+    });
   });
   tocLinks.forEach(link => link.addEventListener('click', handleTocClick));
 }
