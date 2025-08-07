@@ -18,6 +18,9 @@ async function build() {
   const processed = await critters.process(html);
   fs.writeFileSync(path.join(outDir, 'index.html'), processed);
   fs.copyFileSync('sections.html', path.join(outDir, 'sections.html'));
+  if (fs.existsSync('serve.json')) {
+    fs.copyFileSync('serve.json', path.join(outDir, 'serve.json'));
+  }
 
   for (const asset of ['main.css', 'heading.css', 'diagonal.css', 'main.js', 'guide.js', 'sw.js']) {
     if (fs.existsSync(asset)) {
