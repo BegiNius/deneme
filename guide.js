@@ -10,24 +10,29 @@ const sectionMap = {
   'basvuru': 'basvuru-sureci',
   'ozet': 'ozet'
 };
+let observer;
+
 function initTOC() {
   const tocLinks = document.querySelectorAll('.toc-list a');
   tocLinks.forEach(link => {
-    link.addEventListener('click', evt => {
-      evt.preventDefault();
-      const key = link.getAttribute('href').substring(1);
-      const targetId = sectionMap[key];
-      const target = document.getElementById(targetId);
-      if (target) {
-        const rect = target.getBoundingClientRect();
-        if (rect.top < 0 || rect.bottom > window.innerHeight) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (!link.dataset.bound) {
+      link.addEventListener('click', evt => {
+        evt.preventDefault();
+        const key = link.getAttribute('href').substring(1);
+        const targetId = sectionMap[key];
+        const target = document.getElementById(targetId);
+        if (target) {
+          const rect = target.getBoundingClientRect();
+          if (rect.top < 0 || rect.bottom > window.innerHeight) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
         }
-      }
-    });
+      });
+      link.dataset.bound = 'true';
+    }
   });
 
-  const observer = new IntersectionObserver(entries => {
+  observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.id;
@@ -35,13 +40,11 @@ function initTOC() {
         if (key) {
           document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
           const activeLink = document.querySelector(`.toc-list a[href="#${key}"]`);
-          if (activeLink && activeLink.parentElement) {
-            activeLink.parentElement.classList.add('active');
-          }
+          activeLink?.parentElement?.classList.add('active');
         }
       }
     });
-  }, {rootMargin: '0px 0px -70% 0px'});
+  }, { rootMargin: '0px 0px -70% 0px' });
 
   Object.values(sectionMap).forEach(id => {
     const el = document.getElementById(id);
@@ -49,10 +52,29 @@ function initTOC() {
   });
 }
 
-fetch('src/rehber.html')
-  .then(res => res.text())
-  .then(html => {
-    document.getElementById('rehber-icerik').innerHTML = html;
-    initTOC();
-  })
-  .catch(err => console.error('Rehber içeriği yüklenemedi:', err));
+function destroyTOC() {
+  observer?.disconnect();
+}
+
+const container = document.getElementById('rehber-icerik');
+const template = document.getElementById('rehber-template');
+const toggleBtn = document.getElementById('rehber-toggle');
+const tocCard = document.querySelector('.toc-card');
+
+if (container && template && toggleBtn) {
+  let expanded = false;
+  toggleBtn.addEventListener('click', () => {
+    if (!expanded) {
+      container.appendChild(template.content.cloneNode(true));
+      toggleBtn.textContent = 'Daha az göster';
+      tocCard?.classList.remove('hidden');
+      initTOC();
+    } else {
+      destroyTOC();
+      container.innerHTML = '';
+      toggleBtn.textContent = 'Devamını oku';
+      tocCard?.classList.add('hidden');
+    }
+    expanded = !expanded;
+  });
+}
