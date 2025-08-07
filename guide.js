@@ -59,7 +59,7 @@ function destroyTOC() {
 const container = document.getElementById('rehber-icerik');
 const template = document.getElementById('rehber-template');
 const toggleBtn = document.getElementById('rehber-toggle');
-const tocCard = document.querySelector('.toc-card');
+initTOC();
 
 if (container && template && toggleBtn) {
   let expanded = false;
@@ -67,13 +67,11 @@ if (container && template && toggleBtn) {
     if (!expanded) {
       container.appendChild(template.content.cloneNode(true));
       toggleBtn.textContent = 'Daha az göster';
-      tocCard?.classList.remove('hidden');
       initTOC();
     } else {
       destroyTOC();
       container.innerHTML = '';
       toggleBtn.textContent = 'Devamını oku';
-      tocCard?.classList.add('hidden');
     }
     expanded = !expanded;
   });
