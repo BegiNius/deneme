@@ -95,4 +95,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   observer.observe(container);
+
+  const extra = document.getElementById('rehber-extra');
+  const toggle = document.getElementById('rehber-toggle');
+  const nav = document.getElementById('rehber-nav');
+  if (toggle && extra) {
+    toggle.addEventListener('click', () => {
+      extra.classList.remove('hidden');
+      toggle.remove();
+    });
+  }
+  if (nav && extra) {
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (extra.classList.contains('hidden')) {
+          extra.classList.remove('hidden');
+          toggle?.remove();
+        }
+      });
+    });
+  }
 });
