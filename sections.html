@@ -1,4 +1,4 @@
-<style>.diagonal-section{transform:skewY(-4deg);transform-origin:top left}.diagonal-section>*{transform:skewY(4deg)}.wave{width:100%;height:80px;pointer-events:none}.wave-top,.wave-bottom{position:absolute;left:0}.wave-top{top:0;transform:translateY(-100%)}.wave-bottom{bottom:0;transform:translateY(100%) scaleY(-1)}.blob-shadow{position:relative}.blob-shadow::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.08);border-radius:60% 40% 40% 60%/60% 30% 70% 40%;filter:blur(20px);transform:translate3d(0,8px,0);z-index:-1}.hover-glow{transition:filter .3s}.hover-glow:hover{filter:brightness(1.05)}</style>
+<style>.diagonal-section{transform:skewY(-4deg);transform-origin:top left}.diagonal-section>*{transform:skewY(4deg)}.wave{width:100%;height:80px;pointer-events:none}.wave-top,.wave-bottom{position:absolute;left:0}.wave-top{top:0;transform:translateY(-100%)}.wave-bottom{bottom:0;transform:translateY(100%) scaleY(-1)}.blob-shadow{position:relative}.blob-shadow::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.08);border-radius:60% 40% 40% 60%/60% 30% 70% 40%;filter:blur(20px);transform:translate3d(0,8px,0);z-index:-1}.hover-glow{transition:filter .3s}.hover-glow:hover{filter:brightness(1.05)}#rehber .guide-wrapper{display:flex;flex-direction:column;gap:2rem}#rehber .guide-card,#rehber .toc-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:20px}#rehber .guide-card{flex:2}#rehber .toc-card{flex:1}@media(min-width:768px){#rehber .guide-wrapper{flex-direction:row}}#rehber-icerik.fade-in{animation:fadeIn .4s ease-in}@keyframes fadeIn{from{opacity:0}to{opacity:1}}#rehber-icerik #rehber-collapse{display:block;margin:2rem auto 0}</style>
 
   <!-- Neden Biz -->
   <section id="neden" class="relative py-20 overflow-hidden">
@@ -39,41 +39,43 @@
     </svg>
   </section>
 
-  <!-- Makale / Rehber -->
-    <section id="rehber" class="relative py-20 overflow-hidden">
+    <!-- Makale / Rehber -->
+  <section id="rehber" class="relative py-20 overflow-hidden">
     <div class="absolute inset-0 bg-[url('src/img/footer.webp')] bg-cover bg-center opacity-60"></div>
-    <div class="guide-container relative z-10">
-      <div class="guide-card">
-        <svg class="illustration" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="24" r="12" fill="#ffe0b2" stroke="#555" stroke-width="2"/>
-          <path d="M12 32a20 20 0 0 1 40 0v10a6 6 0 0 1-6 6h-4" fill="none" stroke="#555" stroke-width="2"/>
-          <path d="M22 42h20v10H22z" fill="#fff" stroke="#555" stroke-width="2"/>
-          <path d="M16 32v-4M48 32v-4" stroke="#555" stroke-width="2"/>
-        </svg>
-        <h2>Freelance Çağrı Merkezi Rehberi</h2>
-        <p>Evden çağrı merkezi, günümüzde popüler bir çalışma şekli haline geldi. Bu model, çalışanlara esnek saatler sunar. Ancak bu sistem, bireylerin iş yaşam dengesini sağlamasına yardımcı olur. Uzaktan çağrı merkezi, modern iş hayatında yaygınlaştı. Şirketler bu sayede, maliyetleri düşürme fırsatı yakalar. Çalışanlar evden çalışarak, verimliliklerini artırır. Dolayısıyla müşteri hizmetleri süreçlerini etkin yönetirler. Esnek çalışma, çalışan memnuniyetini artırır. Uzaktan çalışma ile şirketler, geniş yetenek havuzuna ulaşır. Bu doğrultuda, teknolojik gelişmeler evden çağrı merkezini destekler.</p>
-        <button id="rehber-toggle" class="btn-secondary mt-4">Devamını oku</button>
-        <div id="rehber-icerik" class="mt-10 text-left"></div>
+    <div class="guide-container relative z-10 max-w-6xl mx-auto px-6">
+      <div class="guide-wrapper">
+        <aside class="toc-card">
+          <h3>İçindekiler</h3>
+          <ul class="toc-list">
+            <li class="active"><a href="#gerekli-ekipmanlar">
+              <span class="toc-icon" style="background:#ff7f50;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M3 9.5L12 3l9 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 20.5v-11z"/><path d="M9 22V12h6v10"/></svg>
+              </span>Gerekli Ekipmanlar</a></li>
+            <li><a href="#is-ilanlari"><span class="toc-icon" style="background:#6c63ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M7 7h10M7 12h4m-4 5h10"/><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg></span>İş İlanları</a></li>
+            <li><a href="#avantajlar"><span class="toc-icon" style="background:#ffa500;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M16 3h5v5M21 3l-7 7"/><path d="M8 3H3v5m0-5l7 7"/><rect x="3" y="13" width="18" height="8" rx="2"/></svg></span>Avantajlar</a></li>
+            <li><a href="#aranan-ozellikler"><span class="toc-icon" style="background:#20c997;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>Aranan Özellikler</a></li>
+            <li><a href="#calisma-saatleri"><span class="toc-icon" style="background:#ff6b6b;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12l5 5L20 7"/></svg></span>Çalışma Saatleri</a></li>
+            <li><a href="#performans"><span class="toc-icon" style="background:#17a2b8;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 18l4-5 4 3 4-4 4 5"/></svg></span>Performans Ölçümü</a></li>
+            <li><a href="#vergi-avantajlari"><span class="toc-icon" style="background:#ff9f1c;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/><path d="M9 9v11"/></svg></span>Vergi Avantajları</a></li>
+            <li><a href="#basvuru-sureci"><span class="toc-icon" style="background:#4dabf7;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg></span>Başvuru Süreci</a></li>
+            <li><a href="#kariyer-firsatlari"><span class="toc-icon" style="background:#9b59b6;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg></span>Kariyer Fırsatları</a></li>
+          </ul>
+        </aside>
+        <section class="guide-card">
+          <svg class="illustration" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="24" r="12" fill="#ffe0b2" stroke="#555" stroke-width="2"/>
+            <path d="M12 32a20 20 0 0 1 40 0v10a6 6 0 0 1-6 6h-4" fill="none" stroke="#555" stroke-width="2"/>
+            <path d="M22 42h20v10H22z" fill="#fff" stroke="#555" stroke-width="2"/>
+            <path d="M16 32v-4M48 32v-4" stroke="#555" stroke-width="2"/>
+          </svg>
+          <h2>Freelance Çağrı Merkezi Rehberi</h2>
+          <p>Evden çağrı merkezi, günümüzde popüler bir çalışma şekli haline geldi. Bu model, çalışanlara esnek saatler sunar. Ancak bu sistem, bireylerin iş yaşam dengesini sağlamasına yardımcı olur. Uzaktan çağrı merkezi, modern iş hayatında yaygınlaştı. Şirketler bu sayede, maliyetleri düşürme fırsatı yakalar. Çalışanlar evden çalışarak, verimliliklerini artırır. Dolayısıyla müşteri hizmetleri süreçlerini etkin yönetirler. Esnek çalışma, çalışan memnuniyetini artırır. Uzaktan çalışma ile şirketler, geniş yetenek havuzuna ulaşır. Bu doğrultuda, teknolojik gelişmeler evden çağrı merkezini destekler.</p>
+          <button id="rehber-toggle" class="btn-secondary mt-4">Devamını oku</button>
+          <div id="rehber-icerik" class="mt-10 text-left"></div>
+        </section>
       </div>
-      <aside class="toc-card">
-        <h3>İçindekiler</h3>
-        <ul class="toc-list">
-          <li class="active"><a href="#evden-cagri">
-            <span class="toc-icon" style="background:#ff7f50;">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M3 9.5L12 3l9 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 20.5v-11z"/><path d="M9 22V12h6v10"/></svg>
-            </span>Evden Çağrı Merkezi</a></li>
-          <li><a href="#ekipman"><span class="toc-icon" style="background:#6c63ff;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M7 7h10M7 12h4m-4 5h10"/><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg></span>Gerekli Ekipmanlar</a></li>
-          <li><a href="#ilanlar"><span class="toc-icon" style="background:#ffa500;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M16 3h5v5M21 3l-7 7"/><path d="M8 3H3v5m0-5l7 7"/><rect x="3" y="13" width="18" height="8" rx="2"/></svg></span>İş İlanları</a></li>
-          <li><a href="#avantaj"><span class="toc-icon" style="background:#20c997;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></span>Avantajlar</a></li>
-          <li><a href="#ozellikler"><span class="toc-icon" style="background:#ff6b6b;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12l5 5L20 7"/></svg></span>Aranan Özellikler</a></li>
-          <li><a href="#saatler"><span class="toc-icon" style="background:#17a2b8;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>Çalışma Saatleri</a></li>
-          <li><a href="#performans"><span class="toc-icon" style="background:#ff9f1c;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 18l4-5 4 3 4-4 4 5"/></svg></span>Performans Ölçümü</a></li>
-          <li><a href="#vergi"><span class="toc-icon" style="background:#4dabf7;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/><path d="M9 9v11"/></svg></span>Vergi Avantajları</a></li>
-          <li><a href="#basvuru"><span class="toc-icon" style="background:#9b59b6;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg></span>Başvuru Süreci</a></li>        </ul>
-      </aside>
     </div>
   </section>
-
   <!-- Kariyer Yolculuğu -->
   <section id="kariyer" class="relative py-20 overflow-hidden">
     <svg class="wave wave-top" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,78 +1,75 @@
-const sectionMap = {
-  'evden-cagri': 'evden-cagri-merkezi',
-  'ekipman': 'gerekli-ekipmanlar',
-  'ilanlar': 'is-ilanlari',
-  'avantaj': 'avantajlar',
-  'ozellikler': 'aranan-ozellikler',
-  'saatler': 'calisma-saatleri',
-  'performans': 'performans',
-  'vergi': 'vergi-avantajlari',
-  'basvuru': 'basvuru-sureci',
-  'ozet': 'ozet'
-};
 let observer;
-
-function initTOC() {
-  const tocLinks = document.querySelectorAll('.toc-list a');
-  tocLinks.forEach(link => {
-    if (!link.dataset.bound) {
-      link.addEventListener('click', evt => {
-        evt.preventDefault();
-        const key = link.getAttribute('href').substring(1);
-        const targetId = sectionMap[key];
-        const target = document.getElementById(targetId);
-        if (target) {
-          const rect = target.getBoundingClientRect();
-          if (rect.top < 0 || rect.bottom > window.innerHeight) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-        }
-      });
-      link.dataset.bound = 'true';
-    }
-  });
-
-  observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        const key = Object.keys(sectionMap).find(k => sectionMap[k] === id);
-        if (key) {
-          document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
-          const activeLink = document.querySelector(`.toc-list a[href="#${key}"]`);
-          activeLink?.parentElement?.classList.add('active');
-        }
-      }
-    });
-  }, { rootMargin: '0px 0px -70% 0px' });
-
-  Object.values(sectionMap).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) observer.observe(el);
-  });
-}
-
-function destroyTOC() {
-  observer?.disconnect();
-}
-
 const container = document.getElementById('rehber-icerik');
 const template = document.getElementById('rehber-template');
 const toggleBtn = document.getElementById('rehber-toggle');
-initTOC();
+const tocLinks = document.querySelectorAll('.toc-list a');
+let expanded = false;
+
+function setupObserver() {
+  observer?.disconnect();
+  observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.toc-list li').forEach(li => li.classList.remove('active'));
+        const activeLink = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+        activeLink?.parentElement?.classList.add('active');
+      }
+    });
+  }, { rootMargin: '0px 0px -70% 0px' });
+  container.querySelectorAll('h3').forEach(h => observer.observe(h));
+}
+
+function expandGuide() {
+  return new Promise(resolve => {
+    if (expanded) {
+      resolve();
+      return;
+    }
+    if (!template || !container) {
+      resolve();
+      return;
+    }
+    container.innerHTML = template.innerHTML;
+    const collapseBtn = document.createElement('button');
+    collapseBtn.id = 'rehber-collapse';
+    collapseBtn.className = 'btn-secondary mt-4';
+    collapseBtn.textContent = 'Daha az göster';
+    collapseBtn.addEventListener('click', collapseGuide);
+    container.appendChild(collapseBtn);
+    container.classList.add('fade-in');
+    container.style.display = 'block';
+    setupObserver();
+    expanded = true;
+    resolve();
+  });
+}
+
+function collapseGuide() {
+  if (!expanded) return;
+  observer?.disconnect();
+  container.innerHTML = '';
+  container.classList.remove('fade-in');
+  expanded = false;
+  toggleBtn.style.display = 'block';
+  document.getElementById('rehber')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function handleTocClick(evt) {
+  evt.preventDefault();
+  const id = this.getAttribute('href').substring(1);
+  expandGuide().then(() => {
+    if (expanded) toggleBtn.style.display = 'none';
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
 
 if (container && template && toggleBtn) {
-  let expanded = false;
   toggleBtn.addEventListener('click', () => {
-    if (!expanded) {
-      container.appendChild(template.content.cloneNode(true));
-      toggleBtn.textContent = 'Daha az göster';
-      initTOC();
-    } else {
-      destroyTOC();
-      container.innerHTML = '';
-      toggleBtn.textContent = 'Devamını oku';
-    }
-    expanded = !expanded;
+    expandGuide().then(() => {
+      if (expanded) toggleBtn.style.display = 'none';
+    });
   });
+  tocLinks.forEach(link => link.addEventListener('click', handleTocClick));
 }
