@@ -87,6 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
   };
+  const isBot = /bot|crawl|slurp|spider/i.test(navigator.userAgent);
+
+  if (isBot) {
+    loadSections();
+    return;
+  }
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
