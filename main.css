@@ -681,6 +681,10 @@ video {
   min-height: 2rem;
 }
 
+.min-h-\[2\.5rem\] {
+  min-height: 2.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -699,6 +703,18 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+@media (min-width: 640px) {
+  .sm\:min-h-\[3rem\] {
+    min-height: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:min-h-\[3\.75rem\] {
+    min-height: 3.75rem;
+  }
 }
 
 .max-w-2xl {
@@ -1083,9 +1099,9 @@ video {
 @font-face{
   font-family:'Arial';
 
-  src:local('Arial'),local('ArialMT'),local('sans-serif');
+  src:url('src/fonts/arial.woff2') format('woff2'),local('Arial'),local('ArialMT'),local('sans-serif');
 
-  font-display:swap
+  font-display:swap;
 }
 
 .glass {
