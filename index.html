@@ -159,7 +159,11 @@
         gap: 1rem;
       }
       #hero h1 {
-        min-height: 3rem;
+        min-height: 2.5rem;
+      }
+      @media (min-width:640px) {
+        #hero h1 { min-height: 3rem; }
+
       }
       @media (min-width:768px) {
         #hero h1 { min-height: 3.75rem; }
@@ -219,7 +223,7 @@
   <!-- Navbar -->
 <nav class="glass fixed w-full z-50 shadow-md">
   <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-    <a href="#" class="font-headline text-2xl text-brand-orange drop-shadow-sm inline-block min-h-[2rem]">
+    <a href="#" class="font-headline text-2xl text-brand-orange drop-shadow-sm inline-block">
       FreelanceCall
     </a>
     <div>
