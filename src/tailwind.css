@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face{font-family:'Arial';src:local('Arial'),local('ArialMT'),local('sans-serif');font-display:swap}
+@font-face{font-family:'Arial';src:url('src/fonts/arial.woff2') format('woff2'),local('Arial'),local('ArialMT'),local('sans-serif');font-display:swap;}
 
     .glass { background: rgba(255,255,255,0.4); backdrop-filter: blur(10px); }
     .fade-in { animation: fadeIn 1s ease forwards; opacity:0 }

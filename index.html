@@ -158,6 +158,23 @@
         display: flex;
         gap: 1rem;
       }
+      #hero h1 {
+        min-height: 2.5rem;
+      }
+      @media (min-width:640px) {
+        #hero h1 { min-height: 3rem; }
+      }
+      @media (min-width:768px) {
+        #hero h1 { min-height: 3.75rem; }
+      }
+      #hero .btn-primary,
+      #hero .btn-secondary {
+        min-width: 8rem;
+        min-height: 3.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
       #hero .btn-primary {
         background: #bf360c;
         color: #fff;
@@ -186,6 +203,7 @@
       }
     </style>
   <!-- Fonts -->
+      <link rel="preload" as="font" href="src/fonts/arial.woff2" type="font/woff2" crossorigin>
       <link rel="preload" as="style" href="main.css" onload="this.onload=null;this.rel='stylesheet'">
       <noscript><link rel="stylesheet" href="main.css"></noscript>
       <style>
@@ -204,7 +222,7 @@
   <!-- Navbar -->
 <nav class="glass fixed w-full z-50 shadow-md">
   <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-    <a href="#" class="font-headline text-2xl text-brand-orange drop-shadow-sm inline-block min-h-[2rem]">
+    <a href="#" class="font-headline text-2xl text-brand-orange drop-shadow-sm inline-block">
       FreelanceCall
     </a>
     <div>
