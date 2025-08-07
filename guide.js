@@ -1,9 +1,10 @@
 let observer;
 const container = document.getElementById('rehber-icerik');
 const template = document.getElementById('rehber-template');
-const toggleBtn = document.getElementById('rehber-toggle');
+const loadBtn = document.getElementById('rehber-toggle');
+const showMoreBtn = document.getElementById('rehber-show-more');
 const tocLinks = document.querySelectorAll('.toc-list a');
-let expanded = false;
+let loaded = false;
 
 function setupObserver() {
   observer?.disconnect();
@@ -19,9 +20,9 @@ function setupObserver() {
   container.querySelectorAll('h3').forEach(h => observer.observe(h));
 }
 
-function expandGuide() {
+function loadGuide() {
   return new Promise(resolve => {
-    if (expanded) {
+    if (loaded) {
       resolve();
       return;
     }
@@ -30,46 +31,36 @@ function expandGuide() {
       return;
     }
     container.innerHTML = template.innerHTML;
-    const collapseBtn = document.createElement('button');
-    collapseBtn.id = 'rehber-collapse';
-    collapseBtn.className = 'btn-secondary mt-4';
-    collapseBtn.textContent = 'Daha az göster';
-    collapseBtn.addEventListener('click', collapseGuide);
-    container.appendChild(collapseBtn);
-    container.classList.add('fade-in');
-    container.style.display = 'block';
+    container.classList.add('fade-in', 'collapsed');
+    showMoreBtn?.classList.remove('hidden');
     setupObserver();
-    expanded = true;
+    loaded = true;
     resolve();
   });
 }
 
-function collapseGuide() {
-  if (!expanded) return;
-  observer?.disconnect();
-  container.innerHTML = '';
-  container.classList.remove('fade-in');
-  expanded = false;
-  toggleBtn.style.display = 'block';
-  document.getElementById('rehber')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function showAll() {
+  container.classList.remove('collapsed');
+  showMoreBtn?.classList.add('hidden');
 }
 
 function handleTocClick(evt) {
   evt.preventDefault();
   const id = this.getAttribute('href').substring(1);
-  expandGuide().then(() => {
-    if (expanded) toggleBtn.style.display = 'none';
+  loadGuide().then(() => {
+    showAll();
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
 
-if (container && template && toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    expandGuide().then(() => {
-      if (expanded) toggleBtn.style.display = 'none';
+if (container && template) {
+  loadBtn?.addEventListener('click', () => {
+    loadGuide().then(() => {
+      loadBtn.style.display = 'none';
     });
   });
+  showMoreBtn?.addEventListener('click', showAll);
   tocLinks.forEach(link => link.addEventListener('click', handleTocClick));
 }
