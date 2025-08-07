@@ -29,7 +29,8 @@ function expandGuide() {
       resolve();
       return;
     }
-    container.innerHTML = template.innerHTML;
+    const frag = template.content.cloneNode(true);
+    container.replaceChildren(frag);
     const collapseBtn = document.createElement('button');
     collapseBtn.id = 'rehber-collapse';
     collapseBtn.className = 'btn-secondary mt-4';
@@ -37,7 +38,7 @@ function expandGuide() {
     collapseBtn.addEventListener('click', collapseGuide);
     container.appendChild(collapseBtn);
     container.classList.add('fade-in');
-    container.style.display = 'block';
+    container.style.display = '';
     setupObserver();
     expanded = true;
     resolve();
@@ -50,7 +51,7 @@ function collapseGuide() {
   container.innerHTML = '';
   container.classList.remove('fade-in');
   expanded = false;
-  toggleBtn.style.display = 'block';
+  toggleBtn.style.display = '';
   document.getElementById('rehber')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
