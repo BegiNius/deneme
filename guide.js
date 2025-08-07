@@ -30,7 +30,8 @@ function expandGuide() {
       return;
     }
     const frag = template.content.cloneNode(true);
-    container.replaceChildren(frag);
+    container.innerHTML = '';
+    container.appendChild(frag);
     const collapseBtn = document.createElement('button');
     collapseBtn.id = 'rehber-collapse';
     collapseBtn.className = 'btn-secondary mt-4';
