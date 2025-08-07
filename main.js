@@ -110,6 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           });
 
+          const equipToggle = container.querySelector('#equip-toggle');
+          const equipMore = container.querySelector('#equip-more');
+          const equipExtra = container.querySelector('#equip-extra');
+          if (equipToggle && equipMore && equipExtra) {
+            equipToggle.addEventListener('click', () => {
+              const hidden = equipExtra.classList.toggle('hidden');
+              equipMore.classList.toggle('hidden');
+              equipToggle.textContent = hidden ? 'Devamını Oku' : 'Daha Az Göster';
+            });
+          }
+
           initRehber(container);
         });
       });
