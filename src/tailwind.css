@@ -19,7 +19,7 @@
     .guide-card svg.illustration { width:100px; height:100px; margin-bottom:20px; }
     .guide-card h1 { font-size:2rem; font-weight:700; margin:0 0 16px 0; }
     .guide-card p { font-size:1rem; margin-bottom:32px; }
-    #rehber-icerik{padding:20px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+    #rehber-icerik{display:none;padding:20px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
     @media (max-width:768px){ .guide-container{grid-template-columns:1fr;} .toc-card { order:-1; } }
     .steps{position:relative;display:flex;flex-direction:column;gap:2.5rem;}
     .steps::before{content:"";position:absolute;left:2rem;top:0;bottom:0;width:2px;background:#8c3600;}

@@ -51,6 +51,7 @@ function collapseGuide() {
   observer?.disconnect();
   container.innerHTML = '';
   container.classList.remove('fade-in');
+  container.style.display = 'none';
   expanded = false;
   toggleBtn.style.display = '';
   document.getElementById('rehber')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
