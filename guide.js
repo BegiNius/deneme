@@ -52,7 +52,18 @@ function initTOC() {
 fetch('src/rehber.html')
   .then(res => res.text())
   .then(html => {
-    document.getElementById('rehber-icerik').innerHTML = html;
+    const content = document.getElementById('rehber-icerik');
+    content.innerHTML = html;
+    content.classList.add('collapsed');
+
+    const toggle = document.getElementById('rehber-toggle');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const isCollapsed = content.classList.toggle('collapsed');
+        toggle.textContent = isCollapsed ? 'Devamını Oku' : 'Daha Az Göster';
+      });
+    }
+
     initTOC();
   })
   .catch(err => console.error('Rehber içeriği yüklenemedi:', err));
