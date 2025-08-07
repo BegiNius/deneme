@@ -1,11 +1,10 @@
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE_NAME = `site-cache-${CACHE_VERSION}`;
 const ASSETS = [
   '/',
   'index.html',
   'main.css',
   'main.js',
-  'guide.js',
   'sections.html',
 ];
 

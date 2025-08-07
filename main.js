@@ -81,9 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
               chevron.classList.toggle('rotate-180');
             });
           });
-
-          // load guide script
-          import('./guide.js').catch(console.error);
         });
       });
   };
