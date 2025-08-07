@@ -29,8 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  initRehber(document);
-
   const loadSections = () => {
     fetch('sections.html')
       .then(res => res.text())
@@ -38,6 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const fragment = document.createRange().createContextualFragment(html);
         container.style.minHeight = '';
         container.replaceChildren(fragment);
+        const rehber = document.getElementById('rehber-wrapper');
+        const kariyer = container.querySelector('#kariyer');
+        if (rehber && kariyer) {
+          kariyer.insertAdjacentElement('afterend', rehber);
+          rehber.classList.remove('hidden');
+        }
         requestAnimationFrame(() => {
           container.classList.add('fade-in');
 
