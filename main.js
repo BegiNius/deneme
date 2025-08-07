@@ -10,12 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadSections = () => {
     fetch('sections.html')
       .then(res => res.text())
-      .then(html => {
-        const fragment = document.createRange().createContextualFragment(html);
-        container.style.minHeight = '';
-        container.replaceChildren(fragment);
-        requestAnimationFrame(() => {
-          container.classList.add('fade-in');
+    .then(html => {
+      const fragment = document.createRange().createContextualFragment(html);
+      container.style.minHeight = '';
+      container.replaceChildren(fragment);
+      if (!('loading' in HTMLImageElement.prototype)) {
+        const lazyImages = container.querySelectorAll('img[loading="lazy"]');
+        const imgObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src || img.src;
+              obs.unobserve(img);
+            }
+          });
+        });
+        lazyImages.forEach(img => imgObserver.observe(img));
+      }
+      requestAnimationFrame(() => {
+        container.classList.add('fade-in');
 
           const slider = container.querySelector('.testimonial-slider');
           if (slider) {
