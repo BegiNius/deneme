@@ -18,20 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
           container.classList.add('fade-in');
 
           const lazyImgs = container.querySelectorAll('img[loading="lazy"]');
-          if ('loading' in HTMLImageElement.prototype) {
-            lazyImgs.forEach(img => { img.src = img.dataset.src; });
-          } else {
-            const io = new IntersectionObserver((entries, obs) => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  const img = entry.target;
-                  img.src = img.dataset.src;
-                  obs.unobserve(img);
-                }
-              });
-            });
-            lazyImgs.forEach(img => io.observe(img));
-          }
+          lazyImgs.forEach(img => {
+            img.src = img.dataset.src;
+          });
 
           const slider = container.querySelector('.testimonial-slider');
           if (slider) {
@@ -94,10 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           // load guide script
-          const guideScript = document.createElement('script');
-          guideScript.src = 'guide.js';
-          guideScript.defer = true;
-          document.body.appendChild(guideScript);
+          import('./guide.js').catch(console.error);
         });
       });
   };

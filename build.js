@@ -6,7 +6,9 @@ async function build() {
   const critters = new Critters({
     path: '.',
     preload: 'media',
-    pruneSource: false
+    pruneSource: false,
+    inlineFonts: true,
+    compress: true
   });
 
   const outDir = 'dist';
