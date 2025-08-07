@@ -1,4 +1,5 @@
-const CACHE_NAME = 'site-cache-v1';
+const CACHE_VERSION = 'v2';
+const CACHE_NAME = `site-cache-${CACHE_VERSION}`;
 const ASSETS = [
   '/',
   'index.html',
@@ -23,7 +24,22 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
+
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+    caches.match(event.request).then(cachedResponse => {
+      const fetchPromise = fetch(event.request)
+        .then(networkResponse =>
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          })
+        )
+        .catch(() => cachedResponse);
+
+      event.waitUntil(fetchPromise);
+
+      return cachedResponse || fetchPromise;
+    })
   );
 });
