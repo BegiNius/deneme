@@ -16,12 +16,6 @@ The hero section preloads `src/img/head1.webp` and now supports a responsive sou
 cwebp -q 80 head1.webp -resize 768 512 -o head1-768.webp
 ```
 
-Alternatively, install `sharp` and `imagetools-core` and run the included generator:
-
-```bash
-npm install sharp imagetools-core
-node generate-images.js
-```
 
 ## Development
 
