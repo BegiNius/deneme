@@ -17,6 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(() => {
           container.classList.add('fade-in');
 
+          const lazyImgs = container.querySelectorAll('img[loading="lazy"]');
+          if ('loading' in HTMLImageElement.prototype) {
+            lazyImgs.forEach(img => { img.src = img.dataset.src; });
+          } else {
+            const io = new IntersectionObserver((entries, obs) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  img.src = img.dataset.src;
+                  obs.unobserve(img);
+                }
+              });
+            });
+            lazyImgs.forEach(img => io.observe(img));
+          }
+
           const slider = container.querySelector('.testimonial-slider');
           if (slider) {
             const cards = slider.querySelectorAll('.testimonial-card');
