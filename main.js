@@ -101,16 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('rehber-nav');
   if (toggle && extra) {
     toggle.addEventListener('click', () => {
-      extra.classList.remove('hidden');
-      toggle.remove();
+      const isHidden = extra.classList.toggle('hidden');
+      toggle.textContent = isHidden ? 'Devamını Oku' : 'Daha Az Göster';
     });
   }
-  if (nav && extra) {
+  if (nav && extra && toggle) {
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         if (extra.classList.contains('hidden')) {
           extra.classList.remove('hidden');
-          toggle?.remove();
+          toggle.textContent = 'Daha Az Göster';
         }
       });
     });
