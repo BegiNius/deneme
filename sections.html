@@ -9,18 +9,6 @@
 .blob-shadow::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.08);border-radius:60% 40% 40% 60%/60% 30% 70% 40%;filter:blur(20px);transform:translate3d(0,8px,0);z-index:-1}
 .hover-glow{transition:filter .3s}
 .hover-glow:hover{filter:brightness(1.05)}
-#rehber .wrapper{display:flex;flex-direction:column;gap:2rem}
-#rehber .toc-card{flex:1}
-#rehber .toc-card ul{position:sticky;top:1rem}
-#rehber .toc-list{list-style:none;margin:0;padding:0}
-#rehber .toc-list li a{display:block;padding:.5rem .75rem;border-radius:.375rem;color:#374151;text-decoration:none}
-#rehber .toc-list li a:hover{background:#fff7ed}
-#rehber .toc-list li.active a{background:#ffedd5;color:#c2410c;font-weight:600}
-#rehber .guide-card{flex:3;background:#fff;border-radius:.75rem;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:2rem}
-@media(min-width:1024px){#rehber .wrapper{flex-direction:row;align-items:flex-start}}
-#rehber-icerik.fade-in{animation:fadeIn .4s ease-in}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-#rehber-icerik #rehber-collapse{display:block;margin:2rem auto 0}
 </style>
 
   <!-- Neden Biz -->
@@ -62,35 +50,6 @@
     </svg>
   </section>
 
-  <!-- Makale / Rehber -->
-  <section id="rehber" class="relative py-20 overflow-hidden bg-gradient-to-b from-white to-orange-50">
-    <div class="absolute inset-0 bg-[url('src/img/footer.webp')] bg-cover bg-center opacity-20"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-6 wrapper">
-      <aside class="toc-card mb-10 lg:mb-0">
-        <h3 class="text-xl font-semibold mb-4">İçindekiler</h3>
-        <ul class="toc-list space-y-1">
-          <li class="active"><a href="#gerekli-ekipmanlar">Gerekli Ekipmanlar</a></li>
-          <li><a href="#is-ilanlari">İş İlanları</a></li>
-          <li><a href="#avantajlar">Avantajlar</a></li>
-          <li><a href="#maliyet">Maliyet</a></li>
-          <li><a href="#aranan-ozellikler">Aranan Özellikler</a></li>
-          <li><a href="#calisma-saatleri">Çalışma Saatleri</a></li>
-          <li><a href="#sanal-ofis-avantajlar">Sanal Ofis Avantajları</a></li>
-          <li><a href="#performans">Performans Ölçümü</a></li>
-          <li><a href="#yasal-mi">Yasal mı?</a></li>
-          <li><a href="#vergi-avantajlari">Vergi Avantajları</a></li>
-          <li><a href="#basvuru-sureci">Başvuru Süreci</a></li>
-          <li><a href="#kariyer-firsatlari">Kariyer Fırsatları</a></li>
-        </ul>
-      </aside>
-      <article class="guide-card">
-        <h2 class="text-3xl font-headline mb-4">Freelance Çağrı Merkezi Rehberi</h2>
-        <p class="text-gray-700">Evden çağrı merkezi, günümüzde popüler bir çalışma şekli haline geldi. Bu model, çalışanlara esnek saatler sunar. Ancak bu sistem, bireylerin iş yaşam dengesini sağlamasına yardımcı olur. Uzaktan çağrı merkezi, modern iş hayatında yaygınlaştı. Şirketler bu sayede, maliyetleri düşürme fırsatı yakalar. Çalışanlar evden çalışarak, verimliliklerini artırır. Dolayısıyla müşteri hizmetleri süreçlerini etkin yönetirler. Esnek çalışma, çalışan memnuniyetini artırır. Uzaktan çalışma ile şirketler, geniş yetenek havuzuna ulaşır. Bu doğrultuda, teknolojik gelişmeler evden çağrı merkezini destekler.</p>
-        <button id="rehber-toggle" class="btn-secondary mt-6">Devamını oku</button>
-        <div id="rehber-icerik" class="mt-10 text-left"></div>
-      </article>
-    </div>
-  </section>
   <!-- Kariyer Yolculuğu -->
   <section id="kariyer" class="relative py-20 overflow-hidden">
     <svg class="wave wave-top" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

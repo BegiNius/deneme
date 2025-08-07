@@ -22,7 +22,7 @@ async function build() {
     fs.copyFileSync('serve.json', path.join(outDir, 'serve.json'));
   }
 
-  for (const asset of ['main.css', 'heading.css', 'diagonal.css', 'main.js', 'guide.js', 'sw.js']) {
+  for (const asset of ['main.css', 'heading.css', 'diagonal.css', 'main.js', 'sw.js']) {
     if (fs.existsSync(asset)) {
       fs.copyFileSync(asset, path.join(outDir, asset));
     }
