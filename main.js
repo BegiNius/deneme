@@ -7,6 +7,30 @@ if ('serviceWorker' in navigator) {
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('lazy-sections');
 
+  const initRehber = root => {
+    const extra = root.querySelector('#rehber-extra');
+    const toggle = root.querySelector('#rehber-toggle');
+    const nav = root.querySelector('#rehber-nav');
+    if (toggle && extra) {
+      toggle.addEventListener('click', () => {
+        const isHidden = extra.classList.toggle('hidden');
+        toggle.textContent = isHidden ? 'Devamını Oku' : 'Daha Az Göster';
+      });
+    }
+    if (nav && extra && toggle) {
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (extra.classList.contains('hidden')) {
+            extra.classList.remove('hidden');
+            toggle.textContent = 'Daha Az Göster';
+          }
+        });
+      });
+    }
+  };
+
+  initRehber(document);
+
   const loadSections = () => {
     fetch('sections.html')
       .then(res => res.text())
@@ -82,25 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
           });
 
-          const extra = container.querySelector('#rehber-extra');
-          const toggle = container.querySelector('#rehber-toggle');
-          const nav = container.querySelector('#rehber-nav');
-          if (toggle && extra) {
-            toggle.addEventListener('click', () => {
-              const isHidden = extra.classList.toggle('hidden');
-              toggle.textContent = isHidden ? 'Devamını Oku' : 'Daha Az Göster';
-            });
-          }
-          if (nav && extra && toggle) {
-            nav.querySelectorAll('a').forEach(link => {
-              link.addEventListener('click', () => {
-                if (extra.classList.contains('hidden')) {
-                  extra.classList.remove('hidden');
-                  toggle.textContent = 'Daha Az Göster';
-                }
-              });
-            });
-          }
+          initRehber(container);
         });
       });
   };
