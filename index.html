@@ -260,19 +260,22 @@
 
 
   <!-- Hero -->
-  <section id="hero" class="relative isolate overflow-hidden min-h-[calc(100svh-var(--navbar-h))]" style="--navbar-h:64px">
+  <section id="hero" class="relative overflow-hidden min-h-[70vh] md:min-h-[75vh] pb-[var(--wave-h)] flex items-center justify-center text-center text-white">
     <div class="absolute inset-0 -z-10">
-      <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true" class="h-full w-full object-cover object-center" />
+      <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="" aria-hidden="true" class="h-full w-full object-cover object-center" />
     </div>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/80 via-black/70 to-black/60"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 py-24 lg:py-32 flex flex-col items-center text-center text-white">
-      <h1 class="font-headline drop-shadow text-balance text-4xl sm:text-5xl md:text-6xl leading-tight min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.75rem]">Evden çalışarak gelir elde etmek ister misiniz?</h1>
-      <p class="mt-4 max-w-2xl text-lg sm:text-xl text-white/90">Müşteri temsilcisi olarak esnek saatlerle görev alabilir, kendi zamanınızı yönetirken düzenli kazanç sağlayabilirsiniz. Çalışmaya başlamak sandığınızdan daha kolay.</p>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
+    <div class="relative z-10 max-w-3xl px-4">
+      <h1 class="font-headline drop-shadow text-balance text-4xl sm:text-5xl md:text-6xl leading-tight">Evden çalışarak gelir elde etmek ister misiniz?</h1>
+      <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-white/90">Müşteri temsilcisi olarak esnek saatlerle görev alabilir, kendi zamanınızı yönetirken düzenli kazanç sağlayabilirsiniz. Çalışmaya başlamak sandığınızdan daha kolay.</p>
       <div class="mt-8 flex flex-wrap justify-center gap-4" role="group">
-        <a href="tel:05551234567" class="rounded-full bg-brand-orange px-6 py-3 text-lg font-semibold text-white shadow hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label="Telefon ile hemen ara">Hemen Ara</a>
-        <a href="#rehber-wrapper" class="rounded-full border-2 border-orange-600 px-6 py-3 text-lg font-semibold text-orange-600 hover:bg-orange-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Detayları İncele</a>
+        <a href="tel:05551234567" class="btn-primary" aria-label="Telefon ile hemen ara">Hemen Ara</a>
+        <a href="#rehber-wrapper" class="btn-secondary">Detayları İncele</a>
       </div>
     </div>
+    <svg class="absolute bottom-0 left-0 w-full h-[var(--wave-h)] text-brand-orange" viewBox="0 0 1440 320" width="1440" height="320" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+      <path fill="currentColor" d="M0 160 Q 360 40 720 160 T 1440 160 V320 H0 Z" />
+    </svg>
   </section>
   <div id="lazy-sections" style="min-height:100vh"></div>
 <!-- Rehber -->
