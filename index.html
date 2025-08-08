@@ -260,7 +260,7 @@
 
 
   <!-- Hero -->
-  <section id="hero" class="relative overflow-hidden min-h-[70vh] md:min-h-[75vh] pb-16 md:pb-24 flex items-center justify-center text-center text-white">
+  <section id="hero" class="relative overflow-hidden flex items-center justify-center text-center text-white min-h-[calc(70vh+clamp(60px,10vw,160px))] md:min-h-[calc(75vh+clamp(60px,10vw,160px))] pb-[calc(clamp(60px,10vw,160px)+4rem)]">
     <div class="absolute inset-0 -z-10">
       <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="" aria-hidden="true" class="h-full w-full object-cover object-center" />
     </div>
@@ -273,9 +273,6 @@
         <a href="#rehber-wrapper" class="btn-secondary">Detayları İncele</a>
       </div>
     </div>
-    <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-brand-orange pointer-events-none" viewBox="0 0 1440 320" width="1440" height="320" role="presentation" aria-hidden="true" preserveAspectRatio="none">
-      <path fill="currentColor" d="M0 160 Q 360 40 720 160 T 1440 160 V320 H0 Z" />
-    </svg>
   </section>
   <div id="lazy-sections" style="min-height:100vh"></div>
 <!-- Rehber -->
@@ -437,6 +434,7 @@
   </svg>
 </section>
   <!-- Scripts -->
+  <script src="src/js/waves.js" defer></script>
   <script src="src/js/main.js" defer></script>
 </body>
 </html>
