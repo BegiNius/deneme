@@ -260,7 +260,7 @@
 
 
   <!-- Hero -->
-  <section id="hero" class="relative overflow-hidden min-h-[70vh] md:min-h-[75vh] pb-[var(--wave-h)] flex items-center justify-center text-center text-white">
+  <section id="hero" class="relative overflow-hidden min-h-[70vh] md:min-h-[75vh] pb-16 md:pb-24 flex items-center justify-center text-center text-white">
     <div class="absolute inset-0 -z-10">
       <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="" aria-hidden="true" class="h-full w-full object-cover object-center" />
     </div>
@@ -273,17 +273,18 @@
         <a href="#rehber-wrapper" class="btn-secondary">Detayları İncele</a>
       </div>
     </div>
-    <svg class="absolute bottom-0 left-0 w-full h-[var(--wave-h)] text-brand-orange" viewBox="0 0 1440 320" width="1440" height="320" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+    <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-brand-orange pointer-events-none" viewBox="0 0 1440 320" width="1440" height="320" role="presentation" aria-hidden="true" preserveAspectRatio="none">
       <path fill="currentColor" d="M0 160 Q 360 40 720 160 T 1440 160 V320 H0 Z" />
     </svg>
   </section>
   <div id="lazy-sections" style="min-height:100vh"></div>
 <!-- Rehber -->
-  <section id="rehber-wrapper" class="relative py-16 px-4 hidden overflow-hidden" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('src/img/footer.webp'); background-attachment: fixed; background-size: cover; background-position: center;">
-    <svg class="wave wave-top text-white" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <section id="rehber-wrapper" class="relative hidden overflow-hidden px-4 py-16 min-h-[60vh]" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('src/img/footer.webp'); background-attachment: fixed; background-size: cover; background-position: center;">
+    <svg class="absolute inset-x-0 -top-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
       <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
     </svg>
-    <div class="max-w-7xl mx-auto lg:flex lg:gap-8">
+    <div class="relative z-10 pt-16 md:pt-24 pb-16 md:pb-24">
+      <div class="max-w-7xl mx-auto lg:flex lg:gap-8">
     <aside class="lg:w-64 h-max lg:sticky lg:top-24 bg-white/50 backdrop-blur-md rounded-xl shadow-lg p-4 mb-8 lg:mb-0">
       <nav id="rehber-nav" class="space-y-2 text-sm">
         <a href="#gerekli-ekipmanlar" class="block hover:underline">Gerekli Ekipmanlar</a>
@@ -430,7 +431,11 @@
     </article>
     </div>
     </div>
-  </section>
+  </div>
+  <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+    <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
+  </svg>
+</section>
   <!-- Scripts -->
   <script src="src/js/main.js" defer></script>
 </body>
