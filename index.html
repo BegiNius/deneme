@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" class="scroll-smooth">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -228,15 +228,15 @@
 </head>
   <body>
   <!-- Navbar -->
-<nav class="glass fixed w-full z-50 shadow-md">
-  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-    <a href="#" class="font-headline text-2xl text-brand-orange drop-shadow-sm inline-block">
+<nav>
+  <div>
+    <a href="#">
       FreelanceCall
     </a>
     <div>
       <!-- Arama butonu -->
       <a href="tel:05551234567" 
-         class="px-6 py-2 rounded-2xl font-semibold text-white bg-brand-orange hover:bg-orange-600 shadow-md hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-200"
+        
          aria-label="Telefon ile hemen ara">
         Hemen Ara
       </a>
@@ -246,57 +246,57 @@
 
 
   <!-- Hero -->
-  <section id="hero" class="relative overflow-hidden flex items-center justify-center text-center text-white min-h-[calc(70vh+clamp(60px,10vw,160px))] md:min-h-[calc(75vh+clamp(60px,10vw,160px))] pb-[calc(clamp(60px,10vw,160px)+4rem)]">
-    <div class="absolute inset-0 -z-10">
-      <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="" aria-hidden="true" class="h-full w-full object-cover object-center" />
+  <section id="hero">
+    <div>
+      <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="" aria-hidden="true" />
     </div>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-black/80 via-black/70 to-black/60"></div>
-    <div class="relative z-10 max-w-3xl px-4">
-      <h1 class="font-headline drop-shadow text-balance text-4xl sm:text-5xl md:text-6xl leading-tight">Evden çalışarak gelir elde etmek ister misiniz?</h1>
-      <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-white/90">Müşteri temsilcisi olarak esnek saatlerle görev alabilir, kendi zamanınızı yönetirken düzenli kazanç sağlayabilirsiniz. Çalışmaya başlamak sandığınızdan daha kolay.</p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4" role="group">
-        <a href="tel:05551234567" class="btn-primary" aria-label="Telefon ile hemen ara">Hemen Ara</a>
-        <a href="#rehber-wrapper" class="btn-secondary">Detayları İncele</a>
+    <div></div>
+    <div>
+      <h1>Evden çalışarak gelir elde etmek ister misiniz?</h1>
+      <p>Müşteri temsilcisi olarak esnek saatlerle görev alabilir, kendi zamanınızı yönetirken düzenli kazanç sağlayabilirsiniz. Çalışmaya başlamak sandığınızdan daha kolay.</p>
+      <div role="group">
+        <a href="tel:05551234567" aria-label="Telefon ile hemen ara">Hemen Ara</a>
+        <a href="#rehber-wrapper">Detayları İncele</a>
       </div>
     </div>
   </section>
   <div id="lazy-sections" style="min-height:100vh"></div>
 <!-- Rehber -->
-  <section id="rehber-wrapper" class="relative hidden overflow-hidden px-4 py-16 min-h-[60vh]" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('src/img/footer.webp'); background-attachment: fixed; background-size: cover; background-position: center;">
-    <svg class="absolute inset-x-0 -top-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+  <section id="rehber-wrapper" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('src/img/footer.webp'); background-attachment: fixed; background-size: cover; background-position: center;">
+    <svg viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
       <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
     </svg>
-    <div class="relative z-10 pt-16 md:pt-24 pb-16 md:pb-24">
-      <div class="max-w-7xl mx-auto lg:flex lg:gap-8">
-    <aside class="lg:w-64 h-max lg:sticky lg:top-24 bg-white/50 backdrop-blur-md rounded-xl shadow-lg p-4 mb-8 lg:mb-0">
-      <nav id="rehber-nav" class="space-y-2 text-sm">
-        <a href="#gerekli-ekipmanlar" class="block hover:underline">Gerekli Ekipmanlar</a>
-        <a href="#is-ilanlari" class="block hover:underline">İş İlanları</a>
-        <a href="#avantajlar" class="block hover:underline">Avantajlar</a>
-        <a href="#maliyet" class="block hover:underline">Maliyet</a>
-        <a href="#aranan-ozellikler" class="block hover:underline">Aranan Özellikler</a>
-        <a href="#calisma-saatleri" class="block hover:underline">Çalışma Saatleri</a>
-        <a href="#sanal-ofis-avantajlar" class="block hover:underline">Sanal Ofis Avantajları</a>
-        <a href="#performans" class="block hover:underline">Performans</a>
-        <a href="#yasal-mi" class="block hover:underline">Yasal mı?</a>
-        <a href="#vergi-avantajlari" class="block hover:underline">Vergi Avantajları</a>
-        <a href="#basvuru-sureci" class="block hover:underline">Başvuru Süreci</a>
-        <a href="#kariyer-firsatlari" class="block hover:underline">Kariyer Fırsatları</a>
+    <div>
+      <div>
+    <aside>
+      <nav id="rehber-nav">
+        <a href="#gerekli-ekipmanlar">Gerekli Ekipmanlar</a>
+        <a href="#is-ilanlari">İş İlanları</a>
+        <a href="#avantajlar">Avantajlar</a>
+        <a href="#maliyet">Maliyet</a>
+        <a href="#aranan-ozellikler">Aranan Özellikler</a>
+        <a href="#calisma-saatleri">Çalışma Saatleri</a>
+        <a href="#sanal-ofis-avantajlar">Sanal Ofis Avantajları</a>
+        <a href="#performans">Performans</a>
+        <a href="#yasal-mi">Yasal mı?</a>
+        <a href="#vergi-avantajlari">Vergi Avantajları</a>
+        <a href="#basvuru-sureci">Başvuru Süreci</a>
+        <a href="#kariyer-firsatlari">Kariyer Fırsatları</a>
       </nav>
     </aside>
-    <div class="flex-1">
-      <article class="glass-card bg-white/70 backdrop-blur-md ring-1 ring-white/40 shadow-xl rounded-3xl p-8 md:p-12 relative overflow-hidden">
-        <div id="guideProgress" class="absolute top-0 left-0 h-1 bg-brand-orange w-0"></div>
-        <div class="summary-card basis-56 shadow rounded-xl p-4 mb-8">
-          <h4 class="font-semibold mb-2">Özet</h4>
-          <p class="text-sm">Evden çağrı merkezi, günümüzde popüler bir çalışma şekli haline geldi. Bu model, çalışanlara esnek saatler sunar. Ancak bu sistem, bireylerin iş yaşam dengesini sağlamasına yardımcı olur. Uzaktan çağrı merkezi, modern iş hayatında yaygınlaştı. Şirketler bu sayede, maliyetleri düşürme fırsatı yakalar. Çalışanlar evden çalışarak, verimliliklerini artırır. Dolayısıyla müşteri hizmetleri süreçlerini etkin yönetirler. Esnek çalışma, çalışan memnuniyetini artırır. Uzaktan çalışma ile şirketler, geniş yetenek havuzuna ulaşır. Bu doğrultuda, teknolojik gelişmeler evden çağrı merkezini destekler.</p>
+    <div>
+      <article>
+        <div id="guideProgress"></div>
+        <div>
+          <h4>Özet</h4>
+          <p>Evden çağrı merkezi, günümüzde popüler bir çalışma şekli haline geldi. Bu model, çalışanlara esnek saatler sunar. Ancak bu sistem, bireylerin iş yaşam dengesini sağlamasına yardımcı olur. Uzaktan çağrı merkezi, modern iş hayatında yaygınlaştı. Şirketler bu sayede, maliyetleri düşürme fırsatı yakalar. Çalışanlar evden çalışarak, verimliliklerini artırır. Dolayısıyla müşteri hizmetleri süreçlerini etkin yönetirler. Esnek çalışma, çalışan memnuniyetini artırır. Uzaktan çalışma ile şirketler, geniş yetenek havuzuna ulaşır. Bu doğrultuda, teknolojik gelişmeler evden çağrı merkezini destekler.</p>
         </div>
-        <div id="rehber-content" class="space-y-6">
-          <h3 id="gerekli-ekipmanlar" class="font-semibold">Evden Çağrı Merkezi İçin Gerekli Ekipmanlar</h3>
-        <p>Evden çağrı merkezi için bazı ekipmanlar şarttır. Öncelikle güçlü bir bilgisayar ve internet bağlantısı gerekir.<span id="equip-more" class="hidden"> Çağrı merkezi yazılımlarıyla uyumlu bir mikrofonlu kulaklık da gereklidir. Telefondan arama yapabileceğin bir sistem kurmalısın. Bu araçlar Evden Çağrı Merkezi deneyimini verimli kılar, ev konforunda çalışmanın avantajlarını sunar ve etkili iletişim için sağlam bir temel oluşturur.</span></p>
-        <div id="equip-extra" class="space-y-6 hidden">
+        <div id="rehber-content">
+          <h3 id="gerekli-ekipmanlar">Evden Çağrı Merkezi İçin Gerekli Ekipmanlar</h3>
+        <p>Evden çağrı merkezi için bazı ekipmanlar şarttır. Öncelikle güçlü bir bilgisayar ve internet bağlantısı gerekir.<span id="equip-more"> Çağrı merkezi yazılımlarıyla uyumlu bir mikrofonlu kulaklık da gereklidir. Telefondan arama yapabileceğin bir sistem kurmalısın. Bu araçlar Evden Çağrı Merkezi deneyimini verimli kılar, ev konforunda çalışmanın avantajlarını sunar ve etkili iletişim için sağlam bir temel oluşturur.</span></p>
+        <div id="equip-extra">
           <p>Sana, Evden Müşteri Hizmetleri için gerekli olan ekipmanları açıklayacağım. İşte bunlar:</p>
-          <ul class="space-y-2">
+          <ul>
             <li>Kaliteli bir bilgisayar: Yeterli donanıma sahip olmalı.</li>
             <li>Yüksek hızlı internet: Sorunsuz bağlantı için şart.</li>
             <li>Mikrofonlu kulaklık: Ses kalitesi için önemlidir.</li>
@@ -304,10 +304,10 @@
             <li>Yedek telefon hattı: Acil durumlar için gereklidir.</li>
           </ul>
           <p>Bu ekipmanlar, Remote Çağrı Merkezi çalışmanı destekler. Kaliteli bir deneyim yaşamak, sağladığın hizmetin kalitesini artırır. Ayrıca, doğru ekipmana sahip olman, müşteri memnuniyetini artırmana yardımcı olur. Yani, bu ekipmanları temin etmek, işinde başarıyı artırır. Ekipmanlar, her zaman güncel kalmalı ve iyi işler yapmayı garantilemelidir.</p>
-          <h3 id="is-ilanlari" class="font-semibold">Uzaktan Çağrı Merkezi İş İlanları Nasıl Bulunur</h3>
+          <h3 id="is-ilanlari">Uzaktan Çağrı Merkezi İş İlanları Nasıl Bulunur</h3>
           <p>Evden Çağrı Merkezi pozisyonları günümüzde oldukça popüler hale geldi. İş arayanlar, evden çalışarak gelir elde etmenin yollarını arıyor. Bu makalede, uzaktan çağrı merkezi iş ilanlarını nasıl bulabileceğinizi detaylı bir şekilde anlatacağım. Öncelikle, internette kapsamlı bir araştırma yapmanız gerekiyor. Çeşitli platformlar üzerinden güncel ilanları takip etmek önemli. Ancak yalnızca bu kaynaklarla sınırlı kalmamalısınız. Bunun yanı sıra, arkadaşlarınızdan veya sektörle ilişkili tanıdıklarınızdan bilgiler alabilirsiniz. Çalışanların deneyimleri, iş bulma sürecinizde size yardımcı olacaktır.</p>
           <p>Uzaktan Çağrı Merkezi pozisyonlarını bulmanın birkaç etkili yolu bulunuyor. Bu yollar şunlardır:</p>
-          <ul class="space-y-2">
+          <ul>
             <li>İş ilanı siteleri: Kariyer.net, Indeed gibi siteleri inceleyin.</li>
             <li>Sosyal medya grupları: LinkedIn veya Facebook üzerindeki gruplara katılın.</li>
             <li>Şirket web siteleri: İlgilendiğiniz firmaların resmi web sitelerini kontrol edin.</li>
@@ -317,11 +317,11 @@
           <p>Bu yöntemler sayesinde iş bulma şansınızı artırabilirsiniz. Özellikle pandemi döneminde uzaktan çalışmanın önemi artarken, Z Özçelik tarafından yapılan "Covid-19 nedeniyle evden çalışma sürecinde performans değerlemesi: Bir kamu kurumu çağrı merkezi örneği" başlıklı çalışma, evden çalışma sürecinde performans değerlendirmesinin nasıl yapılması gerektiği konusunda önemli bilgiler sunmaktadır. Ayrıca, 2023 yılı itibarıyla iş arayanların %65'i uzaktan çalışma imkanlarını tercih ediyor. Bu durum, evden çağrı merkezi işleri için artan bir talebi göstermektedir. Sonuç olarak, yukarıda belirtilen yöntemlerle evden çağrı merkezi iş ilanlarını kolayca bulabilirsiniz.</p>
         </div>
       </div>
-      <div id="rehber-extra" class="space-y-6 hidden">
-        <h3 id="avantajlar" class="font-semibold">Evden Çağrı Merkezi Modelinin Avantajları</h3>
+      <div id="rehber-extra">
+        <h3 id="avantajlar">Evden Çağrı Merkezi Modelinin Avantajları</h3>
         <p>Evden çağrı merkezi, uzaktan çalışma modelinin en yaygın türlerinden biridir. Bu alan, evde çalışmak isteyenler için çeşitli fırsatlar sunar. İnsanlar bu modeli tercih eder çünkü, hem zaman kazandırır hem de maliyetleri düşürür. Şirketler, çalışanların evden çalışma sistemiyle daha verimli çalıştığına dikkat eder. Böylece hem çalışan memnuniyeti artar hem de maliyet tasarrufu sağlanır. Evden çağrı merkezinde çalışanlar, genellikle müşteri hizmetleri alanında görev alır.</p>
         <p>Evden çağrı merkezinin sunduğu birçok avantaj vardır:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>Esnek çalışma saatleri ile kişisel hayatı dengeleyebilirsin.</li>
           <li>Uzaktan çalışma, ofis masraflarından tasarruf etmeye yardımcı olur.</li>
           <li>Geniş bir sektörde iş bulma olanağıyla kariyerini geliştirme şansı elde edersin.</li>
@@ -329,20 +329,20 @@
           <li>Remote çağrı merkezi deneyimi, işyeri kültürü oluşturarak farklı kişilerle çalışmanı sağlar.</li>
         </ul>
         <p>Evden çağrı merkezi, geleceğin iş modelidir. Kendi hızında çalışmak, ekip arkadaşlarınla uzaktan bağlantı kurmak oldukça keyiflidir. Bu fırsatlar ile hem kendini geliştirebilir hem de kariyer hedeflerine ulaşabilirsin. Hayalini kurduğun işe bir adım daha yaklaşabilmek için güncel ilanları takip etmelisin. Bu süreçte, hedeflerini belirlemek ve buna göre hareket etmek sana fayda sağlar.</p>
-        <h3 id="maliyet" class="font-semibold">Sanal Çağrı Merkezi Kurmak Maliyetli Mi?</h3>
+        <h3 id="maliyet">Sanal Çağrı Merkezi Kurmak Maliyetli Mi?</h3>
         <p>Evden çağrı merkezi kurma fikri birçok kişi için cazip. Herkes kendi işini ev ortamında yapmayı tercih ediyor. Özellikle teknolojinin gelişimiyle birlikte uzaktan çağrı merkezi sistemleri popüler hale geldi. Ancak, sanal çağrı merkezi kurmanın maliyetleri üzerinde düşünmek gerekiyor. Bu konuda dikkate alman gereken birçok faktör var. Öncelikle, çalışma ortamını yatırıma dönüştürecek araç ve yazılımların masrafları ortaya çıkıyor. İhtiyacın olan ekipmanları temin etmek, senin için önemli bir başlangıç maliyetidir. Ayrıca sürekli olarak güncel kalman gerektiğini unutmamalısın.</p>
         <p>Sanal ofis çağrı merkezi ile başarılı olmanın yollarını öğrenmen önemli. Bunun yanında, aldığın hizmetlerin sürekliliğini sağlamalısın. Başlangıçta, maliyetler önemli görünse de, uzun vadede bu yatırımlar sana kazanç sağlayabilir. Unutma ki, sanal ofis çağrı merkezi ile işini daha verimli yönetme şansı elde edersin. İşte sana bu konuda dikkat etmen gereken noktalar:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>Ekipman ve yazılım maliyetleri: Bu, başlangıçta önemli bir yatırım gerektirir.</li>
           <li>Eğitim masrafları: Takım arkadaşlarının yetkinliğini artırmalısın.</li>
           <li>İletişim altyapısı: Sağlam bir internet bağlantısı sağlaman gerekiyor.</li>
           <li>Çalışma sürekliliği: Sürekli destek sağlayacak sistemler kurmalısın.</li>
         </ul>
         <p>Uzaktan çağrı merkezi oluşturmanın maliyetlerinin, zamanla sağladığı verimlilikle karşılanabileceğini düün. Ayrıca, bir araştırmaya göre, evden müşteri hizmetleri sunan işletmelerin %60'ı, arttırdıkları verimlilik nedeniyle gelirlerini artırır. Bu bağlamda yaptığın yatırım, uzun vadede seni olumlu sonuçlarla buluşturabilir. Bu süreçte dikkatli planlama yapmayı ihmal etme. Bütün bu detayları göz önünde bulundurarak hareket etmek, senin avantajına olacak.</p>
-        <h3 id="aranan-ozellikler" class="font-semibold">Evden Müşteri Hizmetleri Pozisyonları İçin Aranan Özellikler</h3>
+        <h3 id="aranan-ozellikler">Evden Müşteri Hizmetleri Pozisyonları İçin Aranan Özellikler</h3>
         <p>Günümüzde birçok sektör, evden çağrı merkezi pozisyonlarına duyulan ilgiyi artırdı. Bu nedenle, evden müşteri hizmetleri alanında çalışmak isteyen kişiler bazı özel yeteneklere sahip olmalıdır. İlk olarak, iletişim becerileri dikkat çekmektedir. İyi bir müşteri temsilcisi, net bir şekilde konuşarak, dinleyerek ve etkili bir şekilde sorunları çözerek mükemmel bir hizmet sunar. Ayrıca, bu pozisyonda çalışacağınız için, teknolojiye hâkim olmanız önemlidir. Birçok çağrı merkezi, uzaktan çalışma sistemi ve çeşitli yazılımlar kullanır. Dolayısıyla, sistemleri hızlıca öğrenip etkili bir şekilde çalışabilmenin önemi büyüktür. Geri bildirim alma ve geri dönüş yapma yeteneği, başarılı bir evden çağrı merkezi temsilcisi olmanın bir diğer şartıdır.</p>
         <p>Evden çağrı merkezi pozisyonlarının gereksinimleri, iş yerindeki performansınızı doğrudan etkiler. İşte bu pozisyon için aranan bazı özellikler:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>Etkili iletişim kurma yeteneği: Müşterilerle açık ve net bir şekilde iletişim kurmalısınız.</li>
           <li>Teknoloji okur yazarlığı: Çağrı merkezi yazılımlarını etkili bir şekilde kullanmalısınız.</li>
           <li>Esneklik: Farklı müşteri taleplerine hızlı bir şekilde yanıt verebilmelisiniz.</li>
@@ -350,10 +350,10 @@
           <li>Problem çözme becerisi: Karşılaşılacak sorunları hızla analiz edip çözüm üretmelisiniz.</li>
         </ul>
         <p>2019 yılında yapılan bir araştırma, evden çalışan çağrı merkezi temsilcilerinin %70'inin iş tatmini yaşadığını göstermektedir. Uzaktan çalışma imkânı sunan firmalar, çalışanlarının motivasyonunu artırarak daha iyi sonuçlar elde etmektedir. Bu nedenle, evden çağrı merkezi alanında kendinizi geliştirerek dijital bir kariyer oluşturabilirsiniz.</p>
-        <h3 id="performans" class="font-semibold">Evden Çağrı Merkezi Performansı Nasıl Ölçülür</h3>
+        <h3 id="performans">Evden Çağrı Merkezi Performansı Nasıl Ölçülür</h3>
         <p>Evden çağrı merkezi performansını ölçmek, hizmet kalitenizi artırmak için kritik bir adımdır. Bu süreç, çeşitli metrikleri kapsar. İlk olarak, çalışan verimliliği önemli bir unsur olarak öne çıkar. Çalışanların ne kadar sürede ne kadar iş tamamladığını takip etmek, bu aşamada büyük fayda sağlar. Başarı, sadece iş miktarına değil, aynı zamanda müşteri memnuniyetine bağlıdır. Müşteri geri bildirimlerini toplamak ve analiz etmek, hizmet sunumunu değerlendirmenize yardımcı olur. Böylelikle, olumlu veya olumsuz geri dönüşlere göre gerekli düzeltmeleri yapabilirsiniz. Ek olarak, Evden Çağrı Merkezi performansını artırmak için, çalışanların eğitimine önem vermelisiniz. Sürekli eğitim, çalışanların becerilerini geliştirir ve hizmet kalitenizi iyileştirir.</p>
         <p>Aşağıdaki faktörler, uzaktan çağrı merkezi performans süreçlerini olumlu yönde etkileyen unsurlar arasındadır:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>Performans analizleri: Çalışanların günlük ve haftalık hedeflerini takip edin.</li>
           <li>Geri bildirim sistemleri: Müşterilerden toplanan bilgileri değerlendirin.</li>
           <li>Eğitim programları: Çalışanlar için düzenli kurslar gerçekleştirin.</li>
@@ -361,11 +361,11 @@
           <li>Teknoloji kullanımı: En son teknolojik gelişmeleri sistemlerinize entegre edin.</li>
         </ul>
         <p>Bu unsurları dikkate alarak, Evden Müşteri Hizmetleri sürecini güçlendirirsiniz. Müşteri memnuniyeti, firma başarısını doğrudan etkiler. Yapılan araştırmalara göre, şikayetlerin %70'ini çözebilen bir çağrı merkezi, müşteri sadakatini %40 oranında artırır. Yani, etkili ölçümlerle performansınızı artırarak, müşteri sadakatini geliştirebilirsiniz. Bu durum, hem gelirlerinizi hem de itibarınızı artırır.</p>
-        <h3 id="yasal-mi" class="font-semibold">Evden Çağrı Merkezi Yasal mı?</h3>
+        <h3 id="yasal-mi">Evden Çağrı Merkezi Yasal mı?</h3>
         <p>Evden çağrı merkezi, günümüzde birçok kişi tarafından tercih edilen bir çalışma şeklidir. İnsanlar, evden çalışarak hem zamanlarını hem de kaynaklarını daha verimli kullanma imkanı bulur. Çeşitli sektörlerdeki şirketler, evden çağrı merkezi çalışanlarına ihtiyaç duyar. Bu durum, hem çalışanlar hem de işverenler için pratik bir çözümdür. Ancak, bu modelin yasal olup olmadığı konusunda bazı sorular ortaya çıkar. Bu yazıda, evden çağrı merkezi çalışma şeklini yasal boyutlarıyla ele alacağım. Hangi koşullar altında yasal olduğu ve hangi şartların sağlanması gerektiği konularına da değineceğim.</p>
         <p>Evden çağrı merkezi, belirli yasal koşullara tabi olmalıdır. Çalışanların sigorta ve diğer sosyal hakları, işveren tarafından sağlanmalıdır. Bunun yanı sıra, çalışma saatleri ve diğer iş güvenliği önlemleri de dikkatlice izlenmelidir. Aksi takdirde, iş yasaları ihlal edilebilir. İşverenin yükümlülükleri arasında çalışanların güvenli bir çalışma ortamı sağlaması yer alır. Ayrıca, iş yerinin ev ortamında bulunması, belirli yönetmeliklerin dikkate alınmasını zorunlu kılar. Örneğin, yapılan bir araştırmaya göre, uzaktan çağrı merkezi çalışanlarının %80'i, çalışma koşullarının yasal olduğuna inanıyor. Ancak yine de bazı sorunlar yaşanabilmektedir.</p>
         <p>Evden çağrı merkezi uygulamalarının avantajları şunlardır:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>Etkili zaman yönetimi: Evde çalışarak zaman tasarrufu sağlarsın.</li>
           <li>Aile ile kaliteli zaman: Ailenle daha fazla vakit geçirebilirsin.</li>
           <li>Çalışma ortamı: Kendi çalışma alanını oluşturma fırsatı bulursun.</li>
@@ -373,10 +373,10 @@
           <li>Esneklik: Çalışma saatlerini kendi programına göre ayarlayabilirsin.</li>
         </ul>
         <p>Sonuç olarak, evden çağrı merkezi önemli avantajlar sunar. Ancak, işverenin yasal yükümlülüklerine dikkat etmesi gerekir. Yasalara uyulduğunda, hem çalışanlar hem de işveren için olumlu bir çalışma ortamı oluşturulur. Yasal durumu incelediğinde, şartların sağlandığı durumlarda evden çalışmak hem güvenli hem de kârlı bir yöntemdir. Eğer bu şartlara uyarsanız, evden çağrı merkezi çalışmanın keyfini çıkarabilirsiniz.</p>
-        <h3 id="vergi-avantajlari" class="font-semibold">Evden Çağrı Merkezi Vergi Avantajları Var Mı?</h3>
+        <h3 id="vergi-avantajlari">Evden Çağrı Merkezi Vergi Avantajları Var Mı?</h3>
         <p>Evden çağrı merkezi konusunda vergi avantajlarını değerlendireceğiz. Bu yeni çalışma düzeni, birçok kişiye belirli avantajlar sunar. Özellikle, uzaktan çalışma esnekliği beraberinde birçok mali kazanç getirebilir. Gelişmiş teknolojik altyapılar ile sağlanan bu hizmetler, birçok işletme ve birey için büyük fırsatlar vadeder. Böylece, evden müşteri hizmetleri ile yeni bir yaşam kalitesi mümkünken, bu süreçte ortaya çıkan vergi avantajları özel bir öneme sahiptir. Bunun yanı sıra, sanal ofis çağrı merkezi hizmetleri de benzer avantajları beraberinde getirir. Ancak dikkat edilmesi gereken detaylar bulunur.</p>
         <p>Birçok kişi, evden çağrı merkezi işine yönelmektedir. Bunun sonucunda elde edilecek vergi avantajları belirginleşir. Bu avantajları şu şekilde sıralayabiliriz:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>İşletme giderlerini düşürme: Evden çalışarak birçok masraflardan kurtulursun.</li>
           <li>Vergi indirimleri: Belirli giderler üzerinden vergi indirimleri alabilirsin.</li>
           <li>Kolay izlenebilir gelirler: Gelirlerini raporlamak daha basit hale gelir.</li>
@@ -384,11 +384,11 @@
           <li>Düşük ofis maliyetleri: Evin dışında ofis kiralama masrafı ortadan kalkar.</li>
         </ul>
         <p>Sonuç olarak, evden çağrı merkezi çalışarak birçok avantaj sağlarsın. Vergi indirimleri ve işletme giderlerini düşürme gibi konular, bu işin cazibesini artırır. Dolayısıyla, evden çalışmanın faydalarını göz önünde bulundurman önemlidir. Gelişen pazarlara eşlik etmek için bu fırsatları değerlendirmek, seni daha kazançlı bir konuma yerleştirir.</p>
-        <h3 id="basvuru-sureci" class="font-semibold">Evden Çağrı Merkezi Başvuru Süreci Nasıl İşler?</h3>
+        <h3 id="basvuru-sureci">Evden Çağrı Merkezi Başvuru Süreci Nasıl İşler?</h3>
         <p>Herhangi bir evden çağrı merkezi pozisyonuna başvurmak istiyorsan, bu süreç oldukça basit. Başvuru için öncelikle uygun bir iş ilanı bulmalısın. Çeşitli platformlardan evden çağrı merkezi ilanlarını inceleyebilirsin. Bunun yanında, firmaların kendi web sitelerindeki kariyer bölümlerini de gözden geçirebilirsin. Başvuru süreci genellikle çevrimiçi olarak yapılır. İlgili forma adını, soyadını, iletişim bilgilerini gibi bilgilerini eksiksiz doldurmalısın. Ayrıca, geçmişteki iş deneyimlerini de yazmalısın. Cevap sürecinin hızlı ve etkili olması için net ve açık bir dil kullanarak başvurunu yapmalısın. Firmalar, eleman seçiminde genellikle mülakat aşamasına geçerler. Mülakat sırasında, senin iletişim becerilerini ve müşteri hizmetlerine olan yatkınlığını değerlendirirler.</p>
         <p>Daha ileri aşamalarda, eğer mülakatını başarıyla tamamlarsan, firma seninle iletişime geçer. Sonrasında, bazı firmalar evden hizmet vermene yönelik eğitimler sunar. Evden çağrı merkezi pozisyonların için genellikle birkaç hafta süren bir eğitim süreci olabilir. Bu eğitim süreci, iş görevlerini ve şirketin müşteri ilişkileri politikalarını anlamanı sağlar. Eğitim tamamlandıktan sonra, seninle birlikte çalışacak ekiple tanışma fırsatın olur. Yapılan araştırmalara göre, evden çağrı merkezi pozisyonlarına başvuranların %60’ı kısa sürede işe alım sürecini tamamlar. İşe başladıktan sonra, iş tanımını ve hedeflerini iyice anlamak, iş performansını artırır.</p>
         <p>Evden çağrı merkezi başvuru sürelerinin bazı önemli noktaları şunlardır:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>Başvuru sürecinde belgeleri eksiksiz sağla.</li>
           <li>Mülakat öncesinde firma hakkında bilgi edin.</li>
           <li>Eğitim süreçlerini dikkatlice takip et.</li>
@@ -396,10 +396,10 @@
           <li>Profesyonel iletişim becerilerini geliştir.</li>
         </ul>
         <p>Bu süreçleri takip edersen, sen de evden çağrı merkezi pozisyonuna başarılı bir şekilde adım atarsın. Başvuru sürecinin detaylarını iyi anladığında, iş bulma olasılığın artar. Yine de, her aşamada dikkatli olmalısın. Unutma, senin kararlılığın bu süreçte en önemli etkenlerden biridir.</p>
-        <h3 id="kariyer-firsatlari" class="font-semibold">Evden Çağrı Merkezi Kariyer Fırsatları Nelerdir?</h3>
+        <h3 id="kariyer-firsatlari">Evden Çağrı Merkezi Kariyer Fırsatları Nelerdir?</h3>
         <p>Evden çağrı merkezi, günümüzde popüler bir çalışma alanı haline geldi. Özellikle son yıllarda, birçok kişi uzaktan çalışmayı tercih ediyor. Uzaktan çağrı merkezi pozisyonları, esnek çalışma saatleri sunar. Ayrıca, evden müşteri hizmetleri sunan firmalar, geniş bir müşteri portföyüne hizmet eder. Bu sayede çalışanlar, farklı sektörlerde deneyim kazanma imkanı bulur. Birçok firma, evden çağrı merkezi çalışanlarına çeşitli eğitimler sağlar. Böylelikle, kariyer basamaklarını hızla tırmanmaya başlarsınız.</p>
         <p>Bir evden çağrı merkezi kariyerinde birçok fırsat mevcuttur. Öne çıkan pozisyonlar arasında müşteri temsilcisi, satış temsilcisi ve teknik destek uzmanı yer alır. Bu pozisyonlar, çalıştığınız sektörlere göre farklılık gösterir. Örneğin, bazı firmalar satış odaklı pozisyonlar sunarken, bazıları müşteri memnuniyetine odaklanır. Ayrıca, evden çağrı merkezi çalışanları için kariyer gelişimi sağlar. Bu fırsatlar arasında:</p>
-        <ul class="space-y-2">
+        <ul>
           <li>Gelişen teknoloji: Sentetik zekâ, çağrı merkezi süreçlerini kolaylaştırır.</li>
           <li>Esnek çalışma saatleri: Siz, çalışmalarınızı istediğiniz saat diliminde yapabilirsiniz.</li>
           <li>Görev çeşitliliği: Farklı sektörlerde deneyim kazanma fırsatı sunar.</li>
@@ -408,14 +408,14 @@
         </ul>
         <p>2023 yılında evden çalışan müşteri temsilcilerinin %65’i kariyerlerine devam etmektedir. Bu sonuç, evden çalışmanın sağlamış olduğu avantajları gösterir. Sonuç olarak, evden çağrı merkezi kariyeri, birçok fırsat sunar. Bu alanda çalışarak hem kişisel gelişim sağlar hem de esnek çalışma saatlerinin tadını çıkarırsınız.</p>
       </div>
-      <div class="mt-6">
-        <button id="rehber-toggle" class="px-6 py-2 rounded-2xl font-semibold text-white bg-brand-orange hover:bg-orange-600 shadow-md">Devamını Oku</button>
+      <div>
+        <button id="rehber-toggle">Devamını Oku</button>
       </div>
     </article>
     </div>
     </div>
   </div>
-  <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+  <svg viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
     <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
   </svg>
 </section>
