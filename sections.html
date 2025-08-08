@@ -1,10 +1,6 @@
 <style>
 .diagonal-section{transform:skewY(-4deg);transform-origin:top left}
 .diagonal-section>*{transform:skewY(4deg)}
-.wave{width:100%;height:80px;pointer-events:none}
-.wave-top,.wave-bottom{position:absolute;left:0}
-.wave-top{top:0;transform:translateY(-100%)}
-.wave-bottom{bottom:0;transform:translateY(100%) scaleY(-1)}
 .blob-shadow{position:relative}
 .blob-shadow::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.08);border-radius:60% 40% 40% 60%/60% 30% 70% 40%;filter:blur(20px);transform:translate3d(0,8px,0);z-index:-1}
 .hover-glow{transition:filter .3s}
@@ -12,8 +8,8 @@
 </style>
 
   <!-- Neden Biz -->
-  <section id="neden" class="relative overflow-hidden bg-brand-bg py-20">
-    <div class="absolute inset-x-0 top-0 h-[var(--wave-h)] pointer-events-none select-none">
+  <section id="neden" class="relative overflow-hidden bg-brand-bg py-20 min-h-[60vh]">
+    <div class="absolute inset-x-0 -top-px h-16 md:h-24 pointer-events-none select-none">
       <svg class="absolute inset-0 w-full h-full text-brand-orange/20" viewBox="0 0 1440 320" width="1440" height="320" role="presentation" aria-hidden="true" preserveAspectRatio="none">
         <path fill="currentColor" d="M0 160 Q 360 40 720 160 T 1440 160 V320 H0 Z" />
       </svg>
@@ -21,7 +17,7 @@
         <path fill="currentColor" d="M0 160 Q 360 40 720 160 T 1440 160 V320 H0 Z" />
       </svg>
     </div>
-    <div class="relative max-w-6xl mx-auto px-4 pt-[var(--wave-h)]">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 pt-16 md:pt-24 pb-16 md:pb-24">
       <h2 class="font-headline text-4xl md:text-5xl font-bold text-center text-brand-orange mb-12">Neden Biz?</h2>
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <div class="rounded-2xl bg-white shadow-md p-6 text-center">
@@ -48,21 +44,25 @@
         </div>
       </div>
     </div>
+    <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-brand-bg pointer-events-none" viewBox="0 0 1440 320" width="1440" height="320" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+      <path fill="currentColor" d="M0 160 Q 360 40 720 160 T 1440 160 V320 H0 Z" />
+    </svg>
   </section>
 
   <!-- Kariyer Yolculuğu -->
-  <section id="kariyer" class="relative py-20 overflow-hidden">
-    <svg class="wave wave-top text-brand-bg" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <section id="kariyer" class="relative overflow-hidden py-20 min-h-[60vh]">
+    <svg class="absolute inset-x-0 -top-px w-full h-16 md:h-24 text-brand-bg pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
       <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
     </svg>
-    <div class="absolute inset-0 bg-[url('src/img/kariyeryolculugu.webp')] bg-cover bg-center filter blur-sm opacity-60"></div>
-    <div class="absolute inset-0 bg-white/60"></div>
-    <div class="relative max-w-4xl mx-auto mb-12 text-center">
-      <h2 class="font-headline text-4xl drop-shadow-sm mb-4">Kariyer Yolculuğu</h2>
-      <p class="text-lg">Adım adım gelişimine eşlik ediyoruz.</p>
-    </div>
-    <div class="relative max-w-5xl mx-auto px-6">
-      <div class="steps">
+    <div class="absolute inset-0 bg-[url('src/img/kariyeryolculugu.webp')] bg-cover bg-center filter blur-sm opacity-60 z-0"></div>
+    <div class="absolute inset-0 bg-white/60 z-0"></div>
+    <div class="relative z-10 pt-16 md:pt-24 pb-16 md:pb-24">
+      <div class="max-w-4xl mx-auto mb-12 text-center">
+        <h2 class="font-headline text-4xl drop-shadow-sm mb-4">Kariyer Yolculuğu</h2>
+        <p class="text-lg">Adım adım gelişimine eşlik ediyoruz.</p>
+      </div>
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="steps">
         <div class="step blob-shadow hover-glow">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z" />
@@ -94,25 +94,27 @@
             <p>Müşteri projelerinde yer al ve deneyim kazan.</p>
           </div>
         </div>
+        </div>
       </div>
     </div>
-    <svg class="wave wave-bottom" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="#fff"/>
+    <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
     </svg>
   </section>
 
 
   <!-- Yorumlar -->
-  <section id="yorumlar" class="relative py-20 overflow-hidden">
-    <svg class="wave wave-top text-white" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <section id="yorumlar" class="relative overflow-hidden py-20 min-h-[60vh]">
+    <svg class="absolute inset-x-0 -top-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
       <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
     </svg>
-    <div class="max-w-6xl mx-auto mb-12 text-center">
-      <h2 class="font-headline text-4xl drop-shadow-sm mb-4">Yorumlar</h2>
-      <p class="text-lg">Kullanıcılarımız ne diyor?</p>
-    </div>
-    <div class="relative overflow-hidden px-6">
-      <div class="testimonial-slider">
+    <div class="relative z-10 pt-16 md:pt-24 pb-16 md:pb-24">
+      <div class="max-w-6xl mx-auto mb-12 text-center">
+        <h2 class="font-headline text-4xl drop-shadow-sm mb-4">Yorumlar</h2>
+        <p class="text-lg">Kullanıcılarımız ne diyor?</p>
+      </div>
+      <div class="relative overflow-hidden px-6">
+        <div class="testimonial-slider">
       <div class="testimonial-card">
         <svg class="testimonial-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M2 5a3 3 0 013-3h14a3 3 0 013 3v9a3 3 0 01-3 3H8l-5 5V5z"/></svg>
         <img loading="lazy" decoding="async" data-src="https://i.pravatar.cc/80?img=1" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Ahmet Y." class="testimonial-avatar" width="80" height="80">
@@ -327,19 +329,24 @@
       </button>
       <button id="nextTestimonial" class="slider-arrow right" type="button" aria-label="Sonraki yorum">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-      </button>
+    </button>
     </div>
+    </div>
+    <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
+    </svg>
   </section>
 
   <!-- SSS -->
-  <section id="sss" class="relative py-20 bg-white/40 overflow-hidden">
-    <svg class="wave wave-top text-white" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <section id="sss" class="relative overflow-hidden py-20 bg-white/40 min-h-[60vh]">
+    <svg class="absolute inset-x-0 -top-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
       <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
     </svg>
-    <div class="max-w-6xl mx-auto mb-12 text-center">
-      <h2 class="font-headline text-4xl drop-shadow-sm mb-4">Sık Sorulan Sorular</h2>
-    </div>
-    <div class="max-w-6xl mx-auto space-y-4 px-6">
+    <div class="relative z-10 pt-16 md:pt-24 pb-16 md:pb-24">
+      <div class="max-w-6xl mx-auto mb-12 text-center">
+        <h2 class="font-headline text-4xl drop-shadow-sm mb-4">Sık Sorulan Sorular</h2>
+      </div>
+      <div class="max-w-6xl mx-auto space-y-4 px-6">
       <div class="faq-item bg-white rounded-2xl shadow transition-all hover:shadow-lg hover:scale-105">
         <button id="faq-trigger-1" class="faq-trigger w-full flex justify-between items-center p-6 text-left" aria-expanded="false" aria-controls="faq1">
           <span class="flex items-center gap-4">
@@ -451,8 +458,12 @@
         <div id="faq6" class="faq-content hidden px-6 pb-6" role="region" aria-labelledby="faq-trigger-6">
           <p>Her projeye özel destek ve sürekli eğitim sağlıyoruz.</p>
         </div>
+        </div>
       </div>
     </div>
+    <svg class="absolute inset-x-0 -bottom-px w-full h-16 md:h-24 text-white pointer-events-none" viewBox="0 0 1440 100" width="1440" height="100" role="presentation" aria-hidden="true" preserveAspectRatio="none">
+      <path d="M0 0 C 240 100 480 -100 720 0 C 960 100 1200 -100 1440 0 V100 H0 Z" fill="currentColor"/>
+    </svg>
   </section>
 
   <!-- Footer -->
