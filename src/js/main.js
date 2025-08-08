@@ -5,6 +5,42 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const article = document.querySelector('#rehber-wrapper article');
+  if (article) {
+    const progress = document.getElementById('guideProgress');
+    article.querySelectorAll('h3').forEach(h3 => {
+      const wave = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      wave.setAttribute('width', '100');
+      wave.setAttribute('height', '12');
+      wave.setAttribute('viewBox', '0 0 100 12');
+      wave.innerHTML = '<path d="M0 6C20 0 30 12 50 6C70 0 80 12 100 6" stroke="#fb8c00" stroke-width="2" fill="none"/>';
+      h3.insertAdjacentElement('afterend', wave);
+    });
+    article.querySelectorAll('ul').forEach(ul => {
+      ul.classList.remove('list-disc', 'list-inside');
+      ul.classList.add('guide-list');
+    });
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    article.querySelectorAll('p, ul, h3, .summary-card').forEach(el => {
+      el.classList.add('fade-in');
+      fadeObserver.observe(el);
+    });
+    const updateProgress = () => {
+      const total = article.offsetHeight - window.innerHeight;
+      const progressVal = Math.min(Math.max((window.scrollY - article.offsetTop) / total, 0), 1);
+      progress.style.width = `${progressVal * 100}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
   const container = document.getElementById('lazy-sections');
 
   const initRehber = root => {
