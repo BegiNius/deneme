@@ -72,3 +72,19 @@
       .menu{gap:12px;}
       .footer-bottom{text-align:center;width:100%;}
     }
+
+:root {
+  --wave-h: clamp(60px,10vw,160px);
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(80px + var(--wave-h));
+}
+@layer components {
+  .btn-primary {
+    @apply rounded-full bg-brand-orange px-6 py-3 font-semibold text-white shadow hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange;
+  }
+  .btn-secondary {
+    @apply rounded-full border-2 border-brand-orange px-6 py-3 font-semibold text-brand-orange hover:bg-brand-orange hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange;
+  }
+}
