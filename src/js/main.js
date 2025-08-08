@@ -7,7 +7,7 @@ if ('serviceWorker' in navigator) {
 document.addEventListener('DOMContentLoaded', () => {
   const hero = document.getElementById('hero');
   if (hero && typeof addBottomWave === 'function') {
-    addBottomWave(hero, 'text-brand-bg dark:text-gray-900');
+    addBottomWave(hero);
   }
   const article = document.querySelector('#rehber-wrapper article');
   if (article) {
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
       h3.insertAdjacentElement('afterend', wave);
     });
     article.querySelectorAll('ul').forEach(ul => {
-      ul.classList.remove('list-disc', 'list-inside');
       ul.classList.add('guide-list');
     });
     const fadeObserver = new IntersectionObserver(entries => {
@@ -53,15 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = root.querySelector('#rehber-nav');
     if (toggle && extra) {
       toggle.addEventListener('click', () => {
-        const isHidden = extra.classList.toggle('hidden');
+        const isHidden = extra.toggleAttribute('hidden');
         toggle.textContent = isHidden ? 'Devamını Oku' : 'Daha Az Göster';
       });
     }
     if (nav && extra && toggle) {
       nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-          if (extra.classList.contains('hidden')) {
-            extra.classList.remove('hidden');
+          if (extra.hasAttribute('hidden')) {
+            extra.removeAttribute('hidden');
             toggle.textContent = 'Daha Az Göster';
           }
         });
@@ -80,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const kariyer = container.querySelector('#kariyer');
         if (rehber && kariyer) {
           kariyer.insertAdjacentElement('afterend', rehber);
-          rehber.classList.remove('hidden');
+          rehber.removeAttribute('hidden');
         }
         const neden = container.querySelector('#neden');
         if (neden && typeof addTopWave === 'function') {
-          addTopWave(neden, 'text-brand-bg dark:text-gray-900');
+          addTopWave(neden);
         }
         requestAnimationFrame(() => {
           container.classList.add('fade-in');
@@ -140,17 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const openContent = openItem.querySelector('.faq-content');
                 const openChevron = openItem.querySelector('.chevron');
                 const openTrigger = openItem.querySelector('.faq-trigger');
-                openItem.classList.remove('active', 'bg-orange-50');
-                openContent.classList.add('hidden');
-                openChevron.classList.remove('rotate-180');
+                openItem.classList.remove('active');
+                openContent.setAttribute('hidden', '');
                 openTrigger?.setAttribute('aria-expanded', 'false');
               }
               const expanded = btn.getAttribute('aria-expanded') === 'true';
               btn.setAttribute('aria-expanded', String(!expanded));
               item.classList.toggle('active');
-              item.classList.toggle('bg-orange-50');
-              content.classList.toggle('hidden');
-              chevron.classList.toggle('rotate-180');
+              content.toggleAttribute('hidden');
             });
           });
 
@@ -159,8 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const equipExtra = container.querySelector('#equip-extra');
           if (equipToggle && equipMore && equipExtra) {
             equipToggle.addEventListener('click', () => {
-              const hidden = equipExtra.classList.toggle('hidden');
-              equipMore.classList.toggle('hidden');
+            const hidden = equipExtra.toggleAttribute('hidden');
+            equipMore.toggleAttribute('hidden');
               equipToggle.textContent = hidden ? 'Devamını Oku' : 'Daha Az Göster';
             });
           }
