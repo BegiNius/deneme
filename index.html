@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="https://example.com/head1.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="src/img/head1.webp" imagesrcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" imagesizes="(min-width: 768px) 50vw, 100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="src/img/head1.webp" imagesrcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" imagesizes="(min-width: 1024px) 50vw, 100vw" fetchpriority="high">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -106,106 +106,6 @@
     ]
   }
   </script>
-    <style>
-      body { margin: 0; }
-      #hero {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-      }
-      #hero .bg-image {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1536 / 1024;
-        clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
-      }
-      #hero .bg-image img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-      #hero .bg-image::after {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0,0,0,0.4);
-        clip-path: inherit;
-        pointer-events: none;
-      }
-      #hero .bg-gradient {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #ffa726, #fb8c00);
-        clip-path: polygon(100% 0, 100% 100%, 50% 100%);
-      }
-      #hero .content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -60%);
-        z-index: 10;
-        text-align: center;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-        max-width: 32rem;
-        width: 100%;
-        padding: 0 1rem;
-      }
-      #hero .actions {
-        display: flex;
-        gap: 1rem;
-      }
-      #hero h1 {
-        min-height: 2.5rem;
-      }
-      @media (min-width:640px) {
-        #hero h1 { min-height: 3rem; }
-
-      }
-      @media (min-width:768px) {
-        #hero h1 { min-height: 3.75rem; }
-      }
-      #hero .btn-primary,
-      #hero .btn-secondary {
-        min-width: 8rem;
-        min-height: 3.5rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-      #hero .btn-primary {
-        background: #bf360c;
-        color: #fff;
-        padding: 1rem 2rem;
-        border-radius: 9999px;
-        font-weight: 700;
-        font-size: 1.125rem;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
-      #hero .btn-secondary {
-        padding: 1rem 2rem;
-        border-radius: 9999px;
-        font-weight: 600;
-        font-size: 1.125rem;
-        border: 2px solid #e65100;
-        color: #e65100;
-        background: transparent;
-      }
-      #hero .btn-primary:hover {
-        background: #a52714;
-        transform: scale(1.05);
-      }
-      #hero .btn-secondary:hover { background: #e65100; color: #fff; }
-      @media (max-width:640px) {
-        #hero .actions { flex-direction: column; }
-      }
-    </style>
   <!-- Fonts -->
       <link rel="preload" as="font" href="src/fonts/arial.woff2" type="font/woff2" crossorigin>
       <link rel="preload" as="style" href="main.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -220,6 +120,8 @@
       </style>
       <link rel="preload" as="style" href="heading.css" onload="this.onload=null;this.rel='stylesheet'">
       <noscript><link rel="stylesheet" href="heading.css"></noscript>
+      <link rel="preload" as="style" href="src/css/styles.css" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript><link rel="stylesheet" href="src/css/styles.css"></noscript>
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -358,17 +260,17 @@
 
 
   <!-- Hero -->
-  <section id="hero">
-    <div class="bg-image">
-      <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 768px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" alt="">
+  <section id="hero" class="relative isolate overflow-hidden min-h-[calc(100svh-var(--navbar-h))]" style="--navbar-h:64px">
+    <div class="absolute inset-0 -z-10">
+      <img src="src/img/head1.webp" srcset="src/img/head1-480.webp 480w, src/img/head1-768.webp 768w, src/img/head1-1280.webp 1280w, src/img/head1-1536.webp 1536w" sizes="(min-width: 1024px) 50vw, 100vw" width="1536" height="1024" fetchpriority="high" decoding="async" loading="eager" alt="" aria-hidden="true" class="h-full w-full object-cover object-center" />
     </div>
-    <div class="bg-gradient"></div>
-    <div class="content">
-      <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl drop-shadow min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.75rem]">Evden çalışarak gelir elde etmek ister misiniz?</h1>
-      <p class="text-lg sm:text-xl">Müşteri temsilcisi olarak esnek saatlerle görev alabilir, kendi zamanınızı yönetirken düzenli kazanç sağlayabilirsiniz.
-Çalışmaya başlamak sandığınızdan daha kolay.</p>
-      <div class="actions">
-        <a href="tel:05551234567" class="btn-primary" aria-label="Telefon ile hemen ara">Hemen Ara</a>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/80 via-black/70 to-black/60"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-24 lg:py-32 flex flex-col items-center text-center text-white">
+      <h1 class="font-headline drop-shadow text-balance text-4xl sm:text-5xl md:text-6xl leading-tight min-h-[2.5rem] sm:min-h-[3rem] md:min-h-[3.75rem]">Evden çalışarak gelir elde etmek ister misiniz?</h1>
+      <p class="mt-4 max-w-2xl text-lg sm:text-xl text-white/90">Müşteri temsilcisi olarak esnek saatlerle görev alabilir, kendi zamanınızı yönetirken düzenli kazanç sağlayabilirsiniz. Çalışmaya başlamak sandığınızdan daha kolay.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4" role="group">
+        <a href="tel:05551234567" class="rounded-full bg-brand-orange px-6 py-3 text-lg font-semibold text-white shadow hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label="Telefon ile hemen ara">Hemen Ara</a>
+        <a href="#rehber-wrapper" class="rounded-full border-2 border-orange-600 px-6 py-3 text-lg font-semibold text-orange-600 hover:bg-orange-600 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Detayları İncele</a>
       </div>
     </div>
   </section>
@@ -523,51 +425,7 @@
     </div>
     </div>
   </section>
-  <style>
-  .fade-in{opacity:0;transform:translateY(1rem);transition:opacity .6s,transform .6s}
-  .fade-in.show{opacity:1;transform:none}
-  #rehber-wrapper ul{list-style:none;padding-left:0}
-  .guide-list li{position:relative;padding-left:1.5rem}
-  .guide-list li::before{content:'';position:absolute;left:0;top:0.25rem;width:1rem;height:1rem;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") no-repeat center/contain}
-  </style>
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const article = document.querySelector('#rehber-wrapper article');
-    const progress = document.getElementById('guideProgress');
-    article.querySelectorAll('h3').forEach(h3 => {
-      const wave = document.createElementNS('http://www.w3.org/2000/svg','svg');
-      wave.setAttribute('width','100');
-      wave.setAttribute('height','12');
-      wave.setAttribute('viewBox','0 0 100 12');
-      wave.innerHTML = '<path d="M0 6C20 0 30 12 50 6C70 0 80 12 100 6" stroke="#fb8c00" stroke-width="2" fill="none"/>';
-      h3.insertAdjacentElement('afterend', wave);
-    });
-    article.querySelectorAll('ul').forEach(ul => {
-      ul.classList.remove('list-disc','list-inside');
-      ul.classList.add('guide-list');
-    });
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    article.querySelectorAll('p, ul, h3, .summary-card').forEach(el => {
-      el.classList.add('fade-in');
-      observer.observe(el);
-    });
-    const updateProgress = () => {
-      const total = article.offsetHeight - window.innerHeight;
-      const progressVal = Math.min(Math.max((window.scrollY - article.offsetTop) / total, 0), 1);
-      progress.style.width = `${progressVal * 100}%`;
-    };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-  });
-  </script>
   <!-- Scripts -->
-  <script src="main.js" defer></script>
+  <script src="src/js/main.js" defer></script>
 </body>
 </html>
