@@ -5,6 +5,10 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const hero = document.getElementById('hero');
+  if (hero && typeof addBottomWave === 'function') {
+    addBottomWave(hero, 'text-brand-bg dark:text-gray-900');
+  }
   const article = document.querySelector('#rehber-wrapper article');
   if (article) {
     const progress = document.getElementById('guideProgress');
@@ -77,6 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (rehber && kariyer) {
           kariyer.insertAdjacentElement('afterend', rehber);
           rehber.classList.remove('hidden');
+        }
+        const neden = container.querySelector('#neden');
+        if (neden && typeof addTopWave === 'function') {
+          addTopWave(neden, 'text-brand-bg dark:text-gray-900');
         }
         requestAnimationFrame(() => {
           container.classList.add('fade-in');
